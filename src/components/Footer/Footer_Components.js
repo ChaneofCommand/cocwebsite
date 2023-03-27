@@ -54,8 +54,8 @@ export const FooterLinkTitle = styled.h1`
 margin-left: -110%;
 margin-bottom: 16px;
 font-size: 18px;
-font-weight: normal;
-
+font-weight: 100;
+font-family: "Open Sans";
 `
 
 export const Footerh2=styled.h2`

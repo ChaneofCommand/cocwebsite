@@ -2,7 +2,7 @@ import styled from "styled-components";
 import img1 from '../../Images/BOP.jpeg';
 import img2 from '../../Images/Lexus.png';
 import img3 from '../../Images/Yondr.jpg';
-import img4 from '../../Images/Busch.jpg';
+import img4 from '../../Images/Busch.JPG';
 import img5 from '../../Images/Markforged.jpg';
 
 

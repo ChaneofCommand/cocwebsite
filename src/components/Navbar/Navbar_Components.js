@@ -41,8 +41,9 @@ text-decoration: none;
 `
 export const NavItem = styled.li`
 height: 80px;
-font-size: 18px;
-
+font-weight: 500;
+font-size: 26px;
+font-family:"Open Sans";
 `
 export const NavMenu = styled.ul`
 display: flex;
