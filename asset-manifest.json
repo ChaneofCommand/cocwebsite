@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cocwebsite/static/css/main.abd64e84.css",
-    "main.js": "/cocwebsite/static/js/main.760140c8.js",
+    "main.js": "/cocwebsite/static/js/main.033363aa.js",
     "static/media/Markforged.jpg": "/cocwebsite/static/media/Markforged.1f98a18eb89cff0760d1.jpg",
     "static/media/BOP.jpeg": "/cocwebsite/static/media/BOP.556c3a0105a9e17bd9c1.jpeg",
     "static/media/Lexus.png": "/cocwebsite/static/media/Lexus.80e47c2f44cfbbfacc76.png",
@@ -9,10 +9,10 @@
     "static/media/Busch.jpg": "/cocwebsite/static/media/Busch.308ba380de8f03153ffd.jpg",
     "index.html": "/cocwebsite/index.html",
     "main.abd64e84.css.map": "/cocwebsite/static/css/main.abd64e84.css.map",
-    "main.760140c8.js.map": "/cocwebsite/static/js/main.760140c8.js.map"
+    "main.033363aa.js.map": "/cocwebsite/static/js/main.033363aa.js.map"
   },
   "entrypoints": [
     "static/css/main.abd64e84.css",
-    "static/js/main.760140c8.js"
+    "static/js/main.033363aa.js"
   ]
 }
