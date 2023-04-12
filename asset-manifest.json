@@ -1,19 +1,18 @@
 {
   "files": {
     "main.css": "/cocwebsite/static/css/main.abd64e84.css",
-    "main.js": "/cocwebsite/static/js/main.fffee165.js",
+    "main.js": "/cocwebsite/static/js/main.1b7070df.js",
     "static/media/Markforged.jpg": "/cocwebsite/static/media/Markforged.1f98a18eb89cff0760d1.jpg",
     "static/media/BOP.jpeg": "/cocwebsite/static/media/BOP.556c3a0105a9e17bd9c1.jpeg",
     "static/media/Lexus.png": "/cocwebsite/static/media/Lexus.80e47c2f44cfbbfacc76.png",
     "static/media/Yondr.jpg": "/cocwebsite/static/media/Yondr.97b8460e2a78241ffd9e.jpg",
-    "static/media/Busch.JPG": "/cocwebsite/static/media/Busch.308ba380de8f03153ffd.JPG",
     "static/media/Decal2.png": "/cocwebsite/static/media/Decal2.13d6cc371addad9b162f.png",
     "index.html": "/cocwebsite/index.html",
     "main.abd64e84.css.map": "/cocwebsite/static/css/main.abd64e84.css.map",
-    "main.fffee165.js.map": "/cocwebsite/static/js/main.fffee165.js.map"
+    "main.1b7070df.js.map": "/cocwebsite/static/js/main.1b7070df.js.map"
   },
   "entrypoints": [
     "static/css/main.abd64e84.css",
-    "static/js/main.fffee165.js"
+    "static/js/main.1b7070df.js"
   ]
 }
