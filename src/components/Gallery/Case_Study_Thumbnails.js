@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import img1 from '../../Images/BOP.jpeg';
+import img1 from '../../Images/Markforged.jpg';
 import img2 from '../../Images/Lexus.png';
 import img3 from '../../Images/Yondr.jpg';
-import img4 from '../../Images/Busch.JPG';
 import img5 from '../../Images/Markforged.jpg';
 
 
@@ -14,16 +13,26 @@ padding: 30px;
 height: 250px;
 width: 250px;
 background-image: url(${img1});
-background-size: 320px 500px;
+background-size: 410px 340px;
 background-position:center top;
 box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 transition: all 0.2s ease-in-out;
+background-repeat: no-repeat;
 
 
 &:hover {
     transform: scale(1.02);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+    background-size: 310px 240px;
+    height: 180px;
+}
+
+@media screen and (max-width: 768px) {
+    background-size: 310px 240px;
+    height: 180px;
 }
 `
 
@@ -45,6 +54,15 @@ transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
+@media screen and (max-width: 1000px) {
+    background-size: 310px 240px;
+    height: 180px;
+}
+
+@media screen and (max-width: 768px) {
+    background-size: 310px 240px;
+    height: 180px;
+}
 `
 export const GalleryProject3 = styled.div`
 background: #fff;
@@ -65,6 +83,15 @@ transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
+@media screen and (max-width: 1000px) {
+    background-size: 310px 240px;
+    height: 180px;
+}
+
+@media screen and (max-width: 768px) {
+    background-size: 310px 240px;
+    height: 180px;
+}
 `
 export const GalleryProject4 = styled.div`
 background: #fff;
@@ -84,6 +111,15 @@ transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
+@media screen and (max-width: 1000px) {
+    background-size: 310px 240px;
+    height: 180px;
+}
+
+@media screen and (max-width: 768px) {
+    background-size: 310px 240px;
+    height: 180px;
+}
 `
 export const GalleryProject5 = styled.div`
 background: #fff;
@@ -93,7 +129,7 @@ height: 250px;
 width: 250px;
 margin-top -30px;
 background-image: url(${img1});
-background-size: 320px 500px;
+background-size: 410px 340px;
 background-position:center top;
 box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 transition: all 0.2s ease-in-out;
@@ -103,6 +139,15 @@ transition: all 0.2s ease-in-out;
     transform: scale(1.02);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+    background-size: 310px 240px;
+    height: 180px;
+}
+
+@media screen and (max-width: 768px) {
+    background-size: 310px 240px;
+    height: 180px;
 }
 `
 
@@ -125,6 +170,15 @@ transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
+@media screen and (max-width: 1000px) {
+    background-size: 310px 240px;
+    height: 180px;
+}
+
+@media screen and (max-width: 768px) {
+    background-size: 310px 240px;
+    height: 180px;
+}
 `
 export const GalleryProject7 = styled.div`
 background: #fff;
@@ -145,6 +199,15 @@ transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
+@media screen and (max-width: 1000px) {
+    background-size: 310px 240px;
+    height: 180px;
+}
+
+@media screen and (max-width: 768px) {
+    background-size: 310px 240px;
+    height: 180px;
+}
 `
 export const GalleryProject8 = styled.div`
 background: #fff;
@@ -164,5 +227,15 @@ transition: all 0.2s ease-in-out;
     transform: scale(1.02);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    background-size: 310px 240px;
+    height: 180px;
+}
+
+@media screen and (max-width: 768px) {
+    background-size: 310px 240px;
+    height: 180px;
 }
 `

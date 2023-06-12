@@ -15,6 +15,10 @@ justify-content: center;
 align-items: center;
 max-width: 1100px;
 margin: 0 auto;
+@media screen and (max-width: 820px) {
+    max-width:auto
+}
+
 `
 
 export const FooterLinksContainer = styled.div`
@@ -56,6 +60,13 @@ margin-bottom: 16px;
 font-size: 18px;
 font-weight: 100;
 font-family: "Open Sans";
+@media screen and (max-width: 1000px) {
+    margin-left: -8px;
+}
+@media screen and (max-width: 768px) {
+    margin-left: -20px;
+}
+
 `
 
 export const Footerh2=styled.h2`
@@ -63,6 +74,12 @@ font-style: "Arial";
 font-size: 14px;
 margin-left: 590%;
 width:100px;
+@media screen and (max-width: 1000px) {
+    margin-left: 255px;
+}
+@media screen and (max-width: 820px) {
+    margin-left: -50px;
+}
 `
 
 export const Linkedin = styled(FaLinkedin)`

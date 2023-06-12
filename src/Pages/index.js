@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Gallery from '../components/Gallery/Gallery';
 import Footer from '../components/Footer/Footer';
+import Sidebar from '../components/Sidebar/Index';
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false)
 
@@ -10,9 +11,8 @@ const Home = () => {
     };
     return ( 
         <>
+       <Sidebar isOpen={!isOpen} toggle={toggle} />
        <Navbar toggle={toggle} />
-       <Gallery/>
-       <Footer/>
       </>
     );
 };

@@ -24,9 +24,9 @@ import {
 } from "./Case_Study_Thumbnails";
 const Gallery = () => {
   return (
-    <GalleryContainer id="projects">
+    <GalleryContainer >
       <GalleryWrapper>
-      <Anchor href="" target="_blank">
+      <Anchor href="/markforged" >
           <GalleryProject>
           </GalleryProject>
         </Anchor>

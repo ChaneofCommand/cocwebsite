@@ -1,10 +1,14 @@
 import styled from "styled-components";
 export const GalleryContainer = styled.div`
-margin-top: 10px;
+margin-top: 20px;
 display: flex;
 justify-content: center;
 background: #fff;
 -webkit-perspective:1;
+
+@media screen and (max-width: 820px) {
+    margin-top: -0px;
+}
 
 `
 
@@ -20,13 +24,17 @@ grid-gap: 20px;
 
 @media screen and (max-width: 1000px) {
     grid-template-columns: 1fr 1fr;
-    height: 800px;
+    height: auto;
+    
+    
 }
 
 @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
     padding: 0 20px;
-    height: 1200px;
+    height: auto;
+    grid-gap: 80px;
+    
 }
 `
 
