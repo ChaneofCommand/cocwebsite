@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cocwebsite/static/css/main.abd64e84.css",
-    "main.js": "/cocwebsite/static/js/main.b55dc8cc.js",
+    "main.js": "/cocwebsite/static/js/main.7663f46f.js",
     "static/media/Markforged2.jpg": "/cocwebsite/static/media/Markforged2.ace214600741e5366dfc.jpg",
     "static/media/Markforged.jpg": "/cocwebsite/static/media/Markforged.1f98a18eb89cff0760d1.jpg",
     "static/media/Markforged3.jpg": "/cocwebsite/static/media/Markforged3.6ea38d00f84b3c37752d.jpg",
@@ -12,10 +12,10 @@
     "static/media/Decal2.png": "/cocwebsite/static/media/Decal2.13d6cc371addad9b162f.png",
     "index.html": "/cocwebsite/index.html",
     "main.abd64e84.css.map": "/cocwebsite/static/css/main.abd64e84.css.map",
-    "main.b55dc8cc.js.map": "/cocwebsite/static/js/main.b55dc8cc.js.map"
+    "main.7663f46f.js.map": "/cocwebsite/static/js/main.7663f46f.js.map"
   },
   "entrypoints": [
     "static/css/main.abd64e84.css",
-    "static/js/main.b55dc8cc.js"
+    "static/js/main.7663f46f.js"
   ]
 }
