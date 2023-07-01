@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/cocwebsite/Gallery/static/css/main.abd64e84.css",
-    "main.js": "/cocwebsite/Gallery/static/js/main.4fc26a80.js",
-    "static/media/Markforged2.jpg": "/cocwebsite/Gallery/static/media/Markforged2.ace214600741e5366dfc.jpg",
-    "static/media/Markforged.jpg": "/cocwebsite/Gallery/static/media/Markforged.1f98a18eb89cff0760d1.jpg",
-    "static/media/Markforged3.jpg": "/cocwebsite/Gallery/static/media/Markforged3.6ea38d00f84b3c37752d.jpg",
-    "static/media/Markforged4.jpg": "/cocwebsite/Gallery/static/media/Markforged4.1259ec9af9c8565247b8.jpg",
-    "static/media/Lexus.png": "/cocwebsite/Gallery/static/media/Lexus.80e47c2f44cfbbfacc76.png",
-    "static/media/Yondr.jpg": "/cocwebsite/Gallery/static/media/Yondr.97b8460e2a78241ffd9e.jpg",
-    "static/media/Winifred.JPG": "/cocwebsite/Gallery/static/media/Winifred.2b8dca6753414ed42187.JPG",
-    "static/media/Decal2.png": "/cocwebsite/Gallery/static/media/Decal2.13d6cc371addad9b162f.png",
-    "index.html": "/cocwebsite/Gallery/index.html",
-    "main.abd64e84.css.map": "/cocwebsite/Gallery/static/css/main.abd64e84.css.map",
-    "main.4fc26a80.js.map": "/cocwebsite/Gallery/static/js/main.4fc26a80.js.map"
+    "main.css": "/static/css/main.abd64e84.css",
+    "main.js": "/static/js/main.a795489a.js",
+    "static/media/Markforged2.jpg": "/static/media/Markforged2.ace214600741e5366dfc.jpg",
+    "static/media/Markforged.jpg": "/static/media/Markforged.1f98a18eb89cff0760d1.jpg",
+    "static/media/Markforged3.jpg": "/static/media/Markforged3.6ea38d00f84b3c37752d.jpg",
+    "static/media/Markforged4.jpg": "/static/media/Markforged4.1259ec9af9c8565247b8.jpg",
+    "static/media/Lexus.png": "/static/media/Lexus.80e47c2f44cfbbfacc76.png",
+    "static/media/Yondr.jpg": "/static/media/Yondr.97b8460e2a78241ffd9e.jpg",
+    "static/media/Winifred.JPG": "/static/media/Winifred.2b8dca6753414ed42187.JPG",
+    "static/media/Decal2.png": "/static/media/Decal2.13d6cc371addad9b162f.png",
+    "index.html": "/index.html",
+    "main.abd64e84.css.map": "/static/css/main.abd64e84.css.map",
+    "main.a795489a.js.map": "/static/js/main.a795489a.js.map"
   },
   "entrypoints": [
     "static/css/main.abd64e84.css",
-    "static/js/main.4fc26a80.js"
+    "static/js/main.a795489a.js"
   ]
 }
