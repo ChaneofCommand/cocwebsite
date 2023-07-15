@@ -1,16 +1,22 @@
 {
   "files": {
     "main.css": "/cocwebsite/static/css/main.abd64e84.css",
-    "main.js": "/cocwebsite/static/js/main.74fe8310.js",
+    "main.js": "/cocwebsite/static/js/main.86eb39d0.js",
     "static/media/Markforged2.jpg": "/cocwebsite/static/media/Markforged2.ace214600741e5366dfc.jpg",
     "static/media/Markforged.jpg": "/cocwebsite/static/media/Markforged.1f98a18eb89cff0760d1.jpg",
     "static/media/Markforged3.jpg": "/cocwebsite/static/media/Markforged3.6ea38d00f84b3c37752d.jpg",
     "static/media/Markforged4.jpg": "/cocwebsite/static/media/Markforged4.1259ec9af9c8565247b8.jpg",
+    "static/media/BOP3.jpeg": "/cocwebsite/static/media/BOP3.65bd2827f71f9f15300a.jpeg",
     "static/media/Yondr.jpg": "/cocwebsite/static/media/Yondr.97b8460e2a78241ffd9e.jpg",
     "static/media/Markforged310.jpg": "/cocwebsite/static/media/Markforged310.52f20be94ce100701e9f.jpg",
+    "static/media/BOP4.jpeg": "/cocwebsite/static/media/BOP4.c72b6ec17d7e4e6ab24e.jpeg",
     "static/media/Happify2.png": "/cocwebsite/static/media/Happify2.ea0413612ecb08d3441f.png",
+    "static/media/CC2.png": "/cocwebsite/static/media/CC2.104ad543bf875808d0ea.png",
     "static/media/Winifred.jpg": "/cocwebsite/static/media/Winifred.2b8dca6753414ed42187.jpg",
+    "static/media/AA1.png": "/cocwebsite/static/media/AA1.84e9eea46ca75548c240.png",
     "static/media/BOP1.jpeg": "/cocwebsite/static/media/BOP1.d70a6ff0f51a46a37b32.jpeg",
+    "static/media/BOP2.jpeg": "/cocwebsite/static/media/BOP2.81bf90990e269591dd49.jpeg",
+    "static/media/BB1.jpg": "/cocwebsite/static/media/BB1.cdc1c747d47e3a25fc2e.jpg",
     "static/media/250_2.jpg": "/cocwebsite/static/media/250_2.9b111bff4279de0c8c95.jpg",
     "static/media/250_3.jpg": "/cocwebsite/static/media/250_3.2b61e9b03e8d9d89bb87.jpg",
     "static/media/NF2.jpg": "/cocwebsite/static/media/NF2.3560283dbeab3e7774c7.jpg",
@@ -27,16 +33,18 @@
     "static/media/GOV3.jpg": "/cocwebsite/static/media/GOV3.adaad3173acd3d2c4365.jpg",
     "static/media/GOV1.jpg": "/cocwebsite/static/media/GOV1.31c28dfcb835275255a5.jpg",
     "static/media/NF3.jpg": "/cocwebsite/static/media/NF3.e49021e1ad382686d494.jpg",
+    "static/media/AA2.jpg": "/cocwebsite/static/media/AA2.8434980fbedcd3b5a1c2.jpg",
     "static/media/CC1.jpg": "/cocwebsite/static/media/CC1.cc6da1cb54b70ca0a6d9.jpg",
     "static/media/GOV2.jpg": "/cocwebsite/static/media/GOV2.4f70f391e4854e82ce5e.jpg",
+    "static/media/BB3.jpg": "/cocwebsite/static/media/BB3.de5a65b647df2a580bfe.jpg",
     "static/media/AA3.jpg": "/cocwebsite/static/media/AA3.0ee549ed6f13c94f1130.jpg",
     "static/media/Decal2.png": "/cocwebsite/static/media/Decal2.13d6cc371addad9b162f.png",
     "index.html": "/cocwebsite/index.html",
     "main.abd64e84.css.map": "/cocwebsite/static/css/main.abd64e84.css.map",
-    "main.74fe8310.js.map": "/cocwebsite/static/js/main.74fe8310.js.map"
+    "main.86eb39d0.js.map": "/cocwebsite/static/js/main.86eb39d0.js.map"
   },
   "entrypoints": [
     "static/css/main.abd64e84.css",
-    "static/js/main.74fe8310.js"
+    "static/js/main.86eb39d0.js"
   ]
 }
