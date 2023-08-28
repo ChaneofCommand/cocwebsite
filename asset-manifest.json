@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.abd64e84.css",
-    "main.js": "/static/js/main.da15f998.js",
+    "main.js": "/static/js/main.3e83d37e.js",
     "static/media/Markforged2.jpg": "/static/media/Markforged2.ace214600741e5366dfc.jpg",
     "static/media/Markforged.jpg": "/static/media/Markforged.1f98a18eb89cff0760d1.jpg",
     "static/media/Markforged3.jpg": "/static/media/Markforged3.6ea38d00f84b3c37752d.jpg",
@@ -39,10 +39,10 @@
     "static/media/Decal2.png": "/static/media/Decal2.13d6cc371addad9b162f.png",
     "index.html": "/index.html",
     "main.abd64e84.css.map": "/static/css/main.abd64e84.css.map",
-    "main.da15f998.js.map": "/static/js/main.da15f998.js.map"
+    "main.3e83d37e.js.map": "/static/js/main.3e83d37e.js.map"
   },
   "entrypoints": [
     "static/css/main.abd64e84.css",
-    "static/js/main.da15f998.js"
+    "static/js/main.3e83d37e.js"
   ]
 }
