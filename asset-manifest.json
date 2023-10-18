@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8a838fa8.css",
-    "main.js": "/static/js/main.2b8f2ef6.js",
+    "main.js": "/static/js/main.3f40d98c.js",
     "static/media/Markforged2.jpg": "/static/media/Markforged2.ace214600741e5366dfc.jpg",
     "static/media/Markforged.jpg": "/static/media/Markforged.1f98a18eb89cff0760d1.jpg",
     "static/media/Markforged3.jpg": "/static/media/Markforged3.6ea38d00f84b3c37752d.jpg",
@@ -36,13 +36,16 @@
     "static/media/GOV2.jpg": "/static/media/GOV2.4f70f391e4854e82ce5e.jpg",
     "static/media/BB3.jpg": "/static/media/BB3.de5a65b647df2a580bfe.jpg",
     "static/media/AA3.jpg": "/static/media/AA3.0ee549ed6f13c94f1130.jpg",
+    "static/media/lolla1new.jpg": "/static/media/lolla1new.f89196ea1169fcaab37f.jpg",
+    "static/media/lollanew2.jpg": "/static/media/lollanew2.5dceaf53fa0c1834a72f.jpg",
+    "static/media/lollanew3.jpg": "/static/media/lollanew3.7bfc48b868382b99fb96.jpg",
     "static/media/Decal2.png": "/static/media/Decal2.13d6cc371addad9b162f.png",
     "index.html": "/index.html",
     "main.8a838fa8.css.map": "/static/css/main.8a838fa8.css.map",
-    "main.2b8f2ef6.js.map": "/static/js/main.2b8f2ef6.js.map"
+    "main.3f40d98c.js.map": "/static/js/main.3f40d98c.js.map"
   },
   "entrypoints": [
     "static/css/main.8a838fa8.css",
-    "static/js/main.2b8f2ef6.js"
+    "static/js/main.3f40d98c.js"
   ]
 }
