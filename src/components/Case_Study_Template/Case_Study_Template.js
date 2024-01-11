@@ -5,7 +5,7 @@ import img3 from "../../Images/Markforged3.jpg";
 import img4 from "../../Images/Markforged4.jpg";
 
 export const Heading = styled.h1`
-  font-size: 48px;
+  font-size: 44px;
   margin-left: 100px;
   font-family: Open Sans;
   color: black;

@@ -1,5 +1,4 @@
 import React from "react";
-import { AboutContainer } from "../Contact/Contact_Components";
 import {
   Heading,
   ImageWrapper,
