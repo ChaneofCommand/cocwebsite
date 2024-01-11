@@ -1,110 +1,69 @@
-import styled from 'styled-components';
-import {Link as LinkS} from 'react-scroll';
-import {Link as LinkR} from 'react-router-dom' ;
-import {FaTimes} from 'react-icons/fa'
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { FaTimes } from "react-icons/fa";
 
 export const SidebarContainer = styled.aside`
-position: fixed;
-z-index: 999;
-width: 100%;
-height: 100%;
-background: white;
-display: grid;
-align-items: center;
-top:0;
-left:0;
-font-family: Open Sans:
-transition: 0.33s ease-in-out:
-opacity:${({ isOpen}) => (isOpen ? '100%' : '0')};
-top: ${({ isOpen}) =>( isOpen ? '0' : '-100%')};
-`
-
-export const CloseIcon = styled(FaTimes)`
-color: black;
-margin-left: 425px;
-font-size: 30px;
-
-`
-export const Icon = styled.div`
-position: absolute:
-top: 1.2rem;
-right: 1.5rem;
-background: transparent;
-font-size: 2rem;
-cusror: pointer;
-outline: none;
-width:100px;
+  position: fixed;
+  width: 40%;
+  height: 100%;
+  z-index: 999;
+  right: 0;
+  background: white;
+  font-family: Open Sans;
+  transition: 0.33s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
+  opacity: ${({ isOpen }) => (isOpen ? "100%" : "0%")};
 `;
-export const TopContainer = styled.div`
-width:100%`
-
-export const SidebarWrapper = styled.div`
-color:#fff;
-`
-export const SidebarMenu = styled.ul`
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: repeat(6, 80px);
-text-align: center;
-
-@media screen and (max-width: 480px){
-    grid-template-rows: repeat(6, 60px);
-}
-`
-export const SidebarLink = styled.a`
-display: flex;
-align-items; center;
-justify-content: center;
-font-size: 1.75rem;
-text-decoration: none;
-list-style: none;
-transition: 0.2s ease-in-out;
-color: black;
-cursor: pointer;
-font-family:Open Sans;
-
-&:hover {
-    color: #01bf71;
-    transition: 0.2s ease-in-out:
+export const ButtonDiv = styled.div`
+  box-sizing:border-box;
+  padding:5%;
+  width: auto;
+  height: auto;
+  float: right;
+`;
+export const CloseButton = styled(FaTimes)`
+  color: black;
+  font-size: 25px;
+  &:hover {
+    cursor: pointer;
   }
-`
-export const SideBtnWrap = styled.div`
+`;
+export const MenuDiv = styled.div`
+width:100%;
 display:flex;
-justify-content: center;
-margin-bottom: 15px;
-`
-export const SidebarRoute = styled(LinkS)`
-border-radius: 50px;
-background: #01bf71;
-white-space: nowrap;
-padding: 16px 64px;
-color: #010606;
-font-size: 20px;
-outline: none;
-border: none;
-cursor: pointer;
-transiton: all 0.2s ease-in-out;
-text-decoration: none;
+justify-content:center;
+content-align:center;
 
-
-&:hover {
-    transition all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
+`;
+export const SideBarMenu = styled.ul`
+width:100%;
+height:auto;
+display:table;
+margin:0;
+padding:0;
+`;
+export const SideBarItem = styled.li`
+width:100%;
+list-style-type:none;
+text-align:center;
+font-size:20px;
+text-transform:uppercase;
+box-sizing:border-box;
+padding-top:10%;
+padding-bottom:10%;
+&:hover{
+pointer:cursor;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
-`
-
-export const NavCoCLogo = styled.img`
-height: 120px;
-margin-left -100px;
-
-@media screen and (max-width: 1000px) {
-height:100px;
-margin-left: 55px;
-    
+@media screen and (max-width:420px){
+    font-size:16px;
 }
-@media screen and (max-width: 768px){
-    height: 80px;
-    margin-left:55px;
+`;
+export const SideBarLink = styled(Link)`
+text-decoration:none;
+color:black;
+&:hover{
+    cursor:pointer;
 }
 `
