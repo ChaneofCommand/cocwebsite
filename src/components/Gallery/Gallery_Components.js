@@ -1,8 +1,21 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import styles from "../Gallery/Slider.module.css"
 
 export const GalleryBox = styled.div`
   max-width: 100%;
+  &::-webkit-scrollbar {
+    width: 20px;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    height: 5px;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+  }
 `;
 export const GalleryContainer = styled.div`
   display: grid;
@@ -12,6 +25,8 @@ export const GalleryContainer = styled.div`
   grid-auto-columns: 5.45% 89.1% 5.45%;
   grid-template-areas: "col1 col2 col3";
   padding-bottom: 3%;
+
+ 
 
   @media screen and (max-width: 768px) {
     display: grid;

@@ -7,6 +7,7 @@ import { MdOutlineArrowDropDown } from "react-icons/md";
 import { useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
 import { FaBars } from "react-icons/fa";
+import { animated, useSpring } from 'react-spring';
 import "./nav.css";
 
 import {
@@ -28,6 +29,7 @@ import {
   DropDown,
   DropListItem,
   DropUl,
+  AnimatedDropDown,
 } from "./Navbar_Components";
 /*href ={`${process.env.PUBLIC_URL}/`} 
 href = {`${process.env.PUBLIC_URL}/about`}
@@ -51,7 +53,14 @@ const Navbar = ({ toggle }) => {
   const toggleHome = () => {
     scroll.scrollToTop();
   };
-
+  const [isOpen, setIsOpen] = useState(false);
+  const handleDrop = () => setIsOpen(!isOpen);
+ 
+  const animation = useSpring({
+    config:{ duration: 200 },
+    transform: isOpen ? "translate3D(0,0,0)" : "translate3D(0,-20px,0)",
+    opacity: isOpen ? 1 : 0
+  });
   return (
     <>
       <Nav>
@@ -70,12 +79,24 @@ const Navbar = ({ toggle }) => {
             <NavMenu>
               <NavItem>
                 <NavLink1 to="/">SELECT WORKS</NavLink1>
-                {/*   
-                <DropArrow>
-                  <MdOutlineArrowDropDown
-                  />
+                  
+                <DropArrow >
+                  <MdOutlineArrowDropDown   onClick={handleDrop}></MdOutlineArrowDropDown>
+                 
                 </DropArrow>
-  */}
+                {isOpen && (<AnimatedDropDown style={animation}>
+        <DropUl>
+                <DropListItem onClick={() => { handleClick("All"); handleDrop();}}>All</DropListItem>
+                  <DropListItem  onClick={() => { handleClick("Art Installation"); handleDrop(); }}>Art Installation</DropListItem>
+                  <DropListItem onClick={() => { handleClick("Design"); handleDrop();}}>Design</DropListItem>
+                  <DropListItem onClick={() => { handleClick("Special Event Planning"); handleDrop();}}>Event Planning</DropListItem>
+                  <DropListItem onClick={() => { handleClick("Media/Press"); handleDrop();}}>Media/Press</DropListItem>
+                  <DropListItem onClick={() => { handleClick("Operations"); handleDrop();}}>Operations</DropListItem>
+                  <DropListItem onClick={() => { handleClick("Staffing"); handleDrop();}}>Staffing</DropListItem>
+                  <DropListItem onClick={() => { handleClick("Talent Wrangling"); handleDrop();}}>Talent Wrangling</DropListItem>
+        </DropUl>
+  </AnimatedDropDown>)}
+                
               </NavItem>
               <NavItem>
                 <NavLink2 to="about">ABOUT</NavLink2>
@@ -88,18 +109,7 @@ const Navbar = ({ toggle }) => {
           <Column5 />
         </NavbarContainer>
       </Nav>
-      {/*} <DropDown>
-        <DropUl>
-                <DropListItem onClick={() => handleClick("All")}>All</DropListItem>
-                  <DropListItem onClick={() => handleClick("Art Installation")}>Art Installation</DropListItem>
-                  <DropListItem onClick={() => handleClick("Design")}>Design</DropListItem>
-                  <DropListItem onClick={() => handleClick("Executive Producer")}>Executive Producer</DropListItem>
-                  <DropListItem onClick={() => handleClick("Media/Press")}>Media/Press</DropListItem>
-                  <DropListItem onClick={() => handleClick("Special Event Planning")}>Event Planning</DropListItem>
-                  <DropListItem onClick={() => handleClick("Staffing")}>Staffing</DropListItem>
-                  <DropListItem onClick={() => handleClick("Talent Wrangling")}>Talent Wrangling</DropListItem>
-        </DropUl>
-  </DropDown> */}
+     
     </>
   );
 };

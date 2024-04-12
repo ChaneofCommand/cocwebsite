@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { NavLink, Link } from "react-router-dom";
-
+import { useSpring, animated } from 'react-spring';
+import { MdOutlineArrowDropDown } from "react-icons/md";
 export const Nav = styled.nav`
 background: white;
 height: 80px;
@@ -34,27 +35,32 @@ padding-bottom:3.1%;
 export const Column1 = styled.div`
   grid-area: col1;
   width: 100%;
+
 `;
 export const Column2 = styled.div`
   grid-area: col2;
   width: 100%;
+
 `;
 export const Column3 = styled.div`
   grid-area: col3;
   width: 100%;
+
 `;
 export const Column4 = styled.div`
   grid-area: col4;
   width: 100%;
+  
 `;
 
 export const Column5 = styled.div`
   grid-area: col5;
   width: 100%;
+
 `;
 export const NavbarContainer = styled.div`
   display: grid;
-  height: 120px;
+  height: 130px;
   z-index: 1;
   width: 100%;
 
@@ -83,17 +89,21 @@ export const NavLogo = styled(Link)`
     display: none;
   }
 `;
-export const NavItem = styled.li`
+export const NavItem = styled.div`
   height: 80px;
   font-weight: 500;
   font-size: 26px;
   font-family: "Open Sans";
   white-space:nowrap;
+  
+  width:45%;
+  position:relative;
+
   @media screen and (max-width: 768px) {
     display: none;
   }
 `;
-export const NavMenu = styled.ul`
+export const NavMenu = styled.div`
   display: flex;
   align-items: center;
   list-style: none;
@@ -112,10 +122,15 @@ export const NavLink1 = styled(NavLink)`
   align-items: center;
   text-decoration: none;
   padding-right: 1rem;
+  padding-left:1rem;
   height: 100%;
   cursor: pointer;
   font-size: 18px;
-  
+  max-width:100%;
+  width:100%;
+ 
+  justify-content:center;
+  align-items:center;
   @media screen and (max-width: 1000px) {
     font-size: 20px;
   }
@@ -135,6 +150,8 @@ export const NavLink2 = styled(NavLink)`
   height: 100%;
   cursor: pointer;
   font-size: 18px;
+  max-width:100%;
+  width:100%;
   &.active {
     font-weight: bold;
   }
@@ -153,7 +170,8 @@ export const NavLink3 = styled(NavLink)`
   height: 100%;
   cursor: pointer;
   font-size: 18px;
-
+  max-width:100%;
+  width:100%;
   @media screen and (max-width: 1000px) {
     font-size: 20px;
   }
@@ -167,6 +185,7 @@ export const NavLink3 = styled(NavLink)`
 export const NavCoCLogo = styled.img`
   height: 100px;
   margin-top: 2%;
+
   @media screen and (max-width: 1000px) {
     height: 100px;
   }
@@ -214,29 +233,45 @@ export const MobileIcon = styled.div`
 export const DropArrow = styled.div`
   color:black;
   cursor:pointer;
-
+  font-size:2rem;
 
 `;
 
 export const DropDown = styled.div`
 transition: 0.33s ease-in-out;
-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 
 height:auto;
-width:30%;
+width:100%;
 position:absolute;
-right:0;
+top:100%;
+left:0;
 z-index:5;
+box-shadow: rgba(100, 107, 100, 0.4) 0px 8px 10px;
 `
+export const AnimatedDropDown = animated(DropDown);
+
 export const DropUl = styled.div`
-width:29%;
+width:100%;
 float:left;
 background-color:white;
-border:0.5px solid;
+
 `
 export const DropListItem = styled.div`
 padding:2%;
 cursor: pointer;
-font-size:1.2rem;
+font-size:.9rem;
 text-transform: uppercase;
+border: solid black 0.1px;
+padding-left:1%;
+padding-right:1%;
+font-weight:bold;
+&:hover {
+  transition: 0.2s ease-in-out;
+  background-color:RGB(239,239,239);
+}
+
+&:focus{
+  font-weight:bold;
+  background-color:RGB(239,239,239);
+}
 `

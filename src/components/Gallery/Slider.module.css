@@ -1,0 +1,17 @@
+.gallerybox{
+
+}
+
+.gallerybox::-webkit-scrollbar {
+    width: 20px;
+    height: 5px;
+  }
+
+.gallerybox::-webkit-scrollbar-track {
+    height: 5px;
+    border-radius: 10px;
+  }
+  .gallerybox::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+  }

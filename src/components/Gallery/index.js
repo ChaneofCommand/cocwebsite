@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {useLocation} from "react-router-dom";
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
-
+import styles from "../Gallery/Slider.module.css"
 import { Button } from "react-scroll";
 import LoadFromTop from "../../Hooks/LoadFromTop";
 
@@ -84,7 +84,8 @@ const Gallery = () => {
         "Design",
         "Staffing",
         "Operations",
-        "All"
+        "All",
+        "Media/Press"
       
       ],
     },
@@ -205,7 +206,8 @@ const Gallery = () => {
         "Talent Wrangling",
         "Special Event Planning",
         "Design",
-        "All"
+        "All",
+        "Media/Press"
       ],
     },
     {
@@ -367,7 +369,7 @@ useEffect(() => {
   ? images.filter((image, index) => photoPaths[index].keywords.includes(selectedKeyword))
   : images;
   return (
-    <GalleryBox>
+    <GalleryBox className={styles.gallerybox}>
       <GalleryContainer>
         <Column1 />
         <Column2>
