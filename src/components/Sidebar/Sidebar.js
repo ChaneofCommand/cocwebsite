@@ -3,29 +3,26 @@ import {
   SidebarContainer,
   Icon,
   CloseIcon,
-  SidebarWrapper,
+
   SidebarMenu,
   SidebarLink,
-  SideBtnWrap,
-  SidebarRoute
+
 } from "./Sidebar_Components";
 
 const Sidebar = ({ isOpen, toggle }) => {
   return (
     <SidebarContainer isOpen={isOpen} onClick={toggle}>
-      <Icon onClick={toggle}>
-        <CloseIcon />
+      <Icon >
+        <CloseIcon onClick={toggle}/>
       </Icon>
-      <SidebarWrapper>
+    
         <SidebarMenu>
-          <SidebarLink to="about" onClick={toggle}>About</SidebarLink>
-          <SidebarLink to="projects" onClick={toggle}>Projects</SidebarLink>
-          <SidebarLink to="testimonials" onClick={toggle}>Testimonials</SidebarLink>
+          <SidebarLink to="/" onClick={toggle}>SELECTS</SidebarLink>
+          <SidebarLink to="about" onClick={toggle}>ABOUT</SidebarLink>
+          <SidebarLink to="contact" onClick={toggle}>CONTACT</SidebarLink>
         </SidebarMenu>
-        <SideBtnWrap>
-          <SidebarRoute to="contact" onClick={toggle}>Contact</SidebarRoute>
-        </SideBtnWrap>
-      </SidebarWrapper>
+
+     
     </SidebarContainer>
   );
 };

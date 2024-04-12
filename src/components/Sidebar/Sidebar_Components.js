@@ -1,69 +1,148 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { FaTimes } from "react-icons/fa";
+import styled from 'styled-components';
+import {Link} from 'react-router-dom' ;
+import {FaTimes} from 'react-icons/fa'
 
 export const SidebarContainer = styled.aside`
-  position: fixed;
-  width: 40%;
-  height: 100%;
-  z-index: 999;
-  right: 0;
-  background: white;
-  font-family: Open Sans;
-  transition: 0.33s ease-in-out;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
-  opacity: ${({ isOpen }) => (isOpen ? "100%" : "0%")};
-`;
-export const ButtonDiv = styled.div`
-  box-sizing:border-box;
-  padding:5%;
-  width: auto;
-  height: auto;
-  float: right;
-`;
-export const CloseButton = styled(FaTimes)`
-  color: black;
-  font-size: 25px;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-export const MenuDiv = styled.div`
-width:100%;
-display:flex;
-justify-content:center;
-content-align:center;
+position: fixed;
+z-index: 999;
+width: 35%;
+height: 100%;
+background: white;
+display: flex;
+flex-direction:column;
+top:0;
+right:0;
+font-family: Open Sans;
+transition: 0.33s ease-in-out;
+box-shadow: rgba(100, 107, 100, 0.4) 0px 8px 10px;
+opacity:${({ isOpen}) => (isOpen ? '100%' : '0')};
 
-`;
-export const SideBarMenu = styled.ul`
-width:100%;
-height:auto;
-display:table;
-margin:0;
-padding:0;
-`;
-export const SideBarItem = styled.li`
-width:100%;
-list-style-type:none;
-text-align:center;
-font-size:20px;
-text-transform:uppercase;
-box-sizing:border-box;
-padding-top:10%;
-padding-bottom:10%;
-&:hover{
-pointer:cursor;
-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+
+@media screen and (min-width: 769px) and (max-width: 9999px) {
+   display: none;  /* hide it on larger screens */
 }
-@media screen and (max-width:420px){
-    font-size:16px;
+
+`
+
+export const CloseIcon = styled(FaTimes)`
+color: black;
+
+font-size: 30px;
+float:right;
+
+
+`
+export const Icon = styled.div`
+
+font-size: 2rem;
+cusror: pointer;
+margin-top:5%;
+width:100%;
+
+margin-left:-5%;
+ba
+
+@media screen and (max-width: 428px){
+
 }
-`;
-export const SideBarLink = styled(Link)`
-text-decoration:none;
-color:black;
-&:hover{
-    cursor:pointer;
+@media screen and (max-width: 420px){
+  
+}
+@media screen and (max-width: 380px){
+ 
+}
+`
+export const TopContainer = styled.div`
+border: 2px solid pink;
+width:100%`
+
+export const SidebarWrapper = styled.div`
+color:#fff;
+border: 2px solid orange;
+
+
+`
+export const SidebarMenu = styled.div`
+
+display: flex;
+width:100%;
+flex-direction:column;
+justify-content:space-between;
+margin-top:30%;
+height:25%;
+
+`
+
+export const Underline = styled.hr`
+border: 1px solid black;
+margin-left: -95px;
+width: 60%;
+margin-top -30px;
+
+
+`
+
+export const SidebarLink = styled(Link)`
+display: flex;
+align-items: center;
+justify-content: center;
+width:100%;
+font-size: 1.4rem;
+text-decoration: none;
+color: black;
+cursor: pointer;
+font-family:Open Sans;
+height:33.3%;
+
+&:hover {
+    transition: 0.2s ease-in-out;
+    background-color:RGB(239,239,239);
+  }
+`
+export const SideBtnWrap = styled.div`
+display:flex;
+justify-content: center;
+margin-bottom: 15px;
+border: 2px solid pink;
+`
+export const SidebarRoute = styled(Link)`
+border-radius: 50px;
+background: #01bf71;
+white-space: nowrap;
+padding: 16px 64px;
+color: #010606;
+font-size: 20px;
+outline: none;
+border: none;
+cursor: pointer;
+transiton: all 0.2s ease-in-out;
+text-decoration: none;
+border: 2px solid pink;
+
+&:hover {
+    transition all 0.2s ease-in-out;
+    background: #fff;
+    color: #010606;
+}
+`
+
+export const NavCoCLogo = styled.img`
+height: 80px;
+margin-left 54px;
+margin-top:4px;
+
+@media screen and (max-width: 428px) {
+    height:80px;
+    margin-left 54px;
+    margin-top:-335px;
+   }
+
+@media screen and (max-width: 420px) {
+   height:70px;
+   margin-left 54px;
+   margin-top:-17.5px;
+  }
+  @media screen and (max-width: 380px){
+    margin-top:-17.5px;
 }
 `

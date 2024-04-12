@@ -157,36 +157,28 @@ const imgnum = currentImageIndex + 1;
 
                 <DataDiv>
                   <BoldH1>DURATION:</BoldH1>
-                  <DataH1>1 Day</DataH1>
+                  <DataH1>2 WEEKS</DataH1>
                 </DataDiv>
 
                 <DataDiv>
                   <BoldH1>AUDIENCE:</BoldH1>
                   <DataH1>
-                    Theater: Private; Times Square: General Public
+                  TNF SHOPPERS/OWNERS;
                   </DataH1>
                 </DataDiv>
 
-                <DataDiv>
-                  <BoldH1>TALENT:</BoldH1>
-                  <DataH1>
-                    Margot Robbie, Ewan McGregor, Rosie Perez, Jurnee
-                    Smollett, Mary Elizabeth Winstead
-                  </DataH1>
-                </DataDiv>
+               
               </DataContainer>
 
               <Subtitle2>
-                <span style={{ FontWeight: "bold" }}>C</span>oC produced the
-                premiere cast screening, customizing the movie theater and
-                creating takeaways for attendees. In celebration, this
-                included fully immersive and interactive photo experiences in
-                the adjacent Times Square. CoC recreated various scenes from
-                Harley Quinn’s life, including her living room; favorite night
-                club; and a custom confetti dome, which each featured
-                different photo opportunities. We cast 50 Harley Quinns to
-                roam the square and interact with guests before the real cast
-                took the stage.
+                <span style={{ FontWeight: "bold" }}>C</span>oC worked with key retail
+          partner, Dick’s House of Sport, to amplify the message of The North
+          Face’s ‘More Than a Jacket’ initiative, a campaign celebrating the
+          memories outdoor enthusiasts have made while wearing its outerwear.
+          For two weeks during the holiday retail rush, we created and staffed a
+          customization station at each store for shoppers and existing TNF
+          jacket wearers to customize their jacket’s interior with a selection
+          of custom patches.{" "}
                 <br />
               </Subtitle2>
             </Column2>

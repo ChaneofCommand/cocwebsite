@@ -100,7 +100,7 @@ export const NavMenu = styled.ul`
   text-align: center;
   margin-top: 4.4%;
   float: right;
-
+  
   @media screen and (max-width: 1000px) {
   }
   @media screen and (max-width: 768px) {
@@ -115,7 +115,7 @@ export const NavLink1 = styled(NavLink)`
   height: 100%;
   cursor: pointer;
   font-size: 18px;
-
+  
   @media screen and (max-width: 1000px) {
     font-size: 20px;
   }
@@ -210,3 +210,33 @@ export const MobileIcon = styled.div`
     color: black;
   }
 `;
+
+export const DropArrow = styled.div`
+  color:black;
+  cursor:pointer;
+
+
+`;
+
+export const DropDown = styled.div`
+transition: 0.33s ease-in-out;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+height:auto;
+width:30%;
+position:absolute;
+right:0;
+z-index:5;
+`
+export const DropUl = styled.div`
+width:29%;
+float:left;
+background-color:white;
+border:0.5px solid;
+`
+export const DropListItem = styled.div`
+padding:2%;
+cursor: pointer;
+font-size:1.2rem;
+text-transform: uppercase;
+`

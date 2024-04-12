@@ -9,7 +9,7 @@ import {
   SidebarLink,
   NavCoCLogo,
   Underline
-} from "./Sidebar_Components";
+} from "./Sidebar_ComponentsOLD";
 
 const Sidebar = ({ isOpen, toggle }) => {
   return (

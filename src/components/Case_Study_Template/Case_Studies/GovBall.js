@@ -175,13 +175,8 @@ const imgnum = currentImageIndex + 1;
                     <DataH1>Gov Ball attendants</DataH1>
                   </DataDiv>
 
-                  <DataDiv>
-                    <BoldH1>TALENT:</BoldH1>
-                    <DataH1>
-                      Margot Robbie, Ewan McGregor, Rosie Perez, Jurnee
-                      Smollett, Mary Elizabeth Winstead
-                    </DataH1>
-                  </DataDiv>
+                  
+                 
                 </DataContainer>
 
                 <Subtitle2>
