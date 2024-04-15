@@ -243,7 +243,7 @@ transition: 0.33s ease-in-out;
 height:auto;
 width:100%;
 position:absolute;
-top:100%;
+top:60%;
 left:0;
 z-index:5;
 box-shadow: rgba(100, 107, 100, 0.4) 0px 8px 10px;

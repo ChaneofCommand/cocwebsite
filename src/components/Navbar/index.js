@@ -78,18 +78,17 @@ const Navbar = ({ toggle }) => {
             </MobileIcon>
             <NavMenu>
               <NavItem>
-                <NavLink1 to="/">SELECT WORKS</NavLink1>
+                <NavLink1  onClick={handleDrop} >SELECT WORKS</NavLink1>
                   
-                <DropArrow >
-                  <MdOutlineArrowDropDown   onClick={handleDrop}></MdOutlineArrowDropDown>
-                 
-                </DropArrow>
+
                 {isOpen && (<AnimatedDropDown style={animation}>
         <DropUl>
-                <DropListItem onClick={() => { handleClick("All"); handleDrop();}}>All</DropListItem>
+                <DropListItem  to="/" onClick={() => { handleClick("All"); handleDrop();}}>All</DropListItem>
                   <DropListItem  onClick={() => { handleClick("Art Installation"); handleDrop(); }}>Art Installation</DropListItem>
+                  <DropListItem  onClick={() => { handleClick("Buildout"); handleDrop(); }}>Buildout</DropListItem>
                   <DropListItem onClick={() => { handleClick("Design"); handleDrop();}}>Design</DropListItem>
                   <DropListItem onClick={() => { handleClick("Special Event Planning"); handleDrop();}}>Event Planning</DropListItem>
+                  <DropListItem onClick={() => { handleClick("Executive Producer"); handleDrop();}}>Executive Producer</DropListItem>
                   <DropListItem onClick={() => { handleClick("Media/Press"); handleDrop();}}>Media/Press</DropListItem>
                   <DropListItem onClick={() => { handleClick("Operations"); handleDrop();}}>Operations</DropListItem>
                   <DropListItem onClick={() => { handleClick("Staffing"); handleDrop();}}>Staffing</DropListItem>
