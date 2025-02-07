@@ -26,7 +26,7 @@ const Footer = () => {
             <Column1/>
             <Column2>
             <FooterLinkItems>
-              <FooterLinkTitle>@CHANE OF COMMAND 2024</FooterLinkTitle>
+              <FooterLinkTitle>@CHANE OF COMMAND 2025</FooterLinkTitle>
             </FooterLinkItems>
             </Column2>
             <Column3/>
