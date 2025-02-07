@@ -6,7 +6,7 @@ import {
 
   SidebarMenu,
   SidebarLink,
-
+  SidebarDiv,
 } from "./Sidebar_Components";
 
 const Sidebar = ({ isOpen, toggle }) => {
@@ -17,9 +17,12 @@ const Sidebar = ({ isOpen, toggle }) => {
       </Icon>
     
         <SidebarMenu>
-          <SidebarLink to="/" onClick={toggle}>SELECTS</SidebarLink>
-          <SidebarLink to="about" onClick={toggle}>ABOUT</SidebarLink>
-          <SidebarLink to="contact" onClick={toggle}>CONTACT</SidebarLink>
+         
+          <SidebarLink to="/" onClick={toggle}> <SidebarDiv>SELECTS</SidebarDiv></SidebarLink>
+          
+          <SidebarLink to="about" onClick={toggle}> <SidebarDiv>ABOUT</SidebarDiv></SidebarLink>
+          
+          <SidebarLink to="contact" onClick={toggle}><SidebarDiv>CONTACT</SidebarDiv></SidebarLink>
         </SidebarMenu>
 
      
