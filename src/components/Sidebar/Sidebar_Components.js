@@ -21,7 +21,9 @@ opacity:${({ isOpen}) => (isOpen ? '100%' : '0')};
 @media screen and (min-width: 769px) and (max-width: 9999px) {
    display: none;  /* hide it on larger screens */
 }
-
+@media screen and (max-height: 500px) {
+  width:20%;
+}
 `
 
 export const CloseIcon = styled(FaTimes)`
@@ -33,6 +35,9 @@ float:right;
 @media screen and (max-width: 500px) {
 font-size: 22.5px;
 }
+@media screen and (max-height: 500px) {
+  font-size: 25px;
+}
 `
 export const Icon = styled.div`
 
@@ -42,17 +47,10 @@ margin-top:5%;
 width:100%;
 
 margin-left:-5%;
-ba
 
-@media screen and (max-width: 428px){
 
-}
-@media screen and (max-width: 420px){
-  
-}
-@media screen and (max-width: 380px){
- 
-}
+
+
 `
 export const TopContainer = styled.div`
 border: 2px solid pink;
@@ -71,7 +69,10 @@ width:100%;
 flex-direction:column;
 margin-top:30%;
 height:25%;
-
+@media screen and (max-height: 500px) {
+margin-top:20%;
+  height:35%;
+}
 
 `
 
@@ -103,6 +104,10 @@ text-decoration: none;
     font-size: 1rem;
     height:23%;
   }
+@media screen and (max-height: 500px) {
+  font-size: 1.1rem;
+}
+
 `
 export const SidebarDiv = styled.div`
 width:70%;
