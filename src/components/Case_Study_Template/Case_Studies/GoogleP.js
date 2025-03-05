@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import { initializeApp } from "firebase/app";
+
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import ReactPlayer from "react-player";
 import LoadFromTop from "../../../Hooks/LoadFromTop";
@@ -33,30 +33,19 @@ import {
   Ratio,
   PlayerWrapper,
 } from "../Case_Study_Template";
-import { AmazonProps } from "../Props/Case_Studies-Props1";
-import { lazy } from "react";
 import { BopWrapper } from "../Case_Study_Images/BOP_PHOTOS";
 import { PhotoDiv } from "../Case_Study_Images/AMAZON_PHOTOS";
 import { useState } from "react";
 import styles from "../Case_Studies/CaseStudyTemplate.module.css";
 import { MdArrowForwardIos, MdArrowBackIos, MdClose } from "react-icons/md";
-import Lululemon from "./Lululemon";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyB-yJUtZ3kOZkCEge_RuNagDlwslKkKDVw",
-  authDomain: "chaneofcommand-eb230.firebaseapp.com",
-  projectId: "chaneofcommand-eb230",
-  storageBucket: "chaneofcommand-eb230.appspot.com",
-  messagingSenderId: "114671170130",
-  appId: "1:114671170130:web:625dea67da92ad20a9258b",
-};
-const app = initializeApp(firebaseConfig);
-const storage = getStorage(app);
+
+import { storage } from "../../Firebase/firebase"; 
 const GoogleP = () => {
   const [photoUrls, setPhotoUrls] = useState([]);
 
  
-  // Initialize Firebase
+  
 
   const [images, setImages] = useState([]);
 

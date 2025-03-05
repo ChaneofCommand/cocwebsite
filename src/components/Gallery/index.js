@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import {useLocation} from "react-router-dom";
-import { initializeApp } from "firebase/app";
+
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import styles from "../Gallery/Slider.module.css"
 import { Button } from "react-scroll";
 import LoadFromTop from "../../Hooks/LoadFromTop";
-
+import { storage } from "../Firebase/firebase"
 import { AboutWrapper } from "../About/About_Components";
 import {
   GalleryBox,
@@ -35,24 +35,13 @@ import {
 } from "./Case_Study_Thumbnails";
 /*href = {`${process.env.PUBLIC_URL}/markforged`} >
  */
-const firebaseConfig = {
-  apiKey: "AIzaSyB-yJUtZ3kOZkCEge_RuNagDlwslKkKDVw",
-  authDomain: "chaneofcommand-eb230.firebaseapp.com",
-  projectId: "chaneofcommand-eb230",
-  storageBucket: "chaneofcommand-eb230.appspot.com",
-  messagingSenderId: "114671170130",
-  appId: "1:114671170130:web:625dea67da92ad20a9258b",
-};
-const app = initializeApp(firebaseConfig);
-const storage = getStorage(app);
-const Gallery = () => {
-  // Your web app's Firebase configuration
 
-  // Initialize Firebase
+const Gallery = () => {
+ 
 
   const [photoUrls, setPhotoUrls] = useState([]);
 
-  // Initialize Firebase
+
 
   const [images, setImages] = useState([]);
 

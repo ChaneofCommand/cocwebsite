@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import { initializeApp } from "firebase/app";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 
 import LoadFromTop from "../../../Hooks/LoadFromTop";
@@ -41,24 +40,15 @@ Image,
 } from "../Case_Study_Template";
 import { BopWrapper } from "../Case_Study_Images/BOP_PHOTOS";
 import { PhotoDiv } from "../../Case_Study_Template/Case_Study_Images/CRIME_CON_PHOTOS";
+import { storage } from "../../Firebase/firebase"; 
 
-const firebaseConfig = {
-  apiKey: "AIzaSyB-yJUtZ3kOZkCEge_RuNagDlwslKkKDVw",
-  authDomain: "chaneofcommand-eb230.firebaseapp.com",
-  projectId: "chaneofcommand-eb230",
-  storageBucket: "chaneofcommand-eb230.appspot.com",
-  messagingSenderId: "114671170130",
-  appId: "1:114671170130:web:625dea67da92ad20a9258b",
-};
-const app = initializeApp(firebaseConfig);
-const storage = getStorage(app);
 
 const CrimeCon = () => {
 
   const [photoUrls, setPhotoUrls] = useState([]);
 
  
-  // Initialize Firebase
+  
 
   const [images, setImages] = useState([]);
 
