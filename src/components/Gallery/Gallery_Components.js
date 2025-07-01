@@ -4,37 +4,40 @@ import styles from "../Gallery/Slider.module.css"
 
 export const GalleryBox = styled.div`
   max-width: 100%;
+  
   &::-webkit-scrollbar {
-    width: 20px;
-    height: 5px;
+    width: 1.25rem; /* 20px in rem */
+    height: 0.3125rem; /* 5px in rem */
   }
+  
   &::-webkit-scrollbar-track {
-    height: 5px;
-    border-radius: 10px;
+    height: 0.3125rem;
+    border-radius: 0.625rem; /* 10px in rem */
   }
+  
   &::-webkit-scrollbar-thumb {
     background: gray;
-    border-radius: 10px;
+    border-radius: 0.625rem;
   }
 `;
 export const GalleryContainer = styled.div`
   display: grid;
   width: 100%;
-  height: 100%;
   transform: scale(0.9);
-  grid-auto-columns: 5.45% 89.1% 5.45%;
+  grid-template-columns: 5.45% 89.1% 5.45%;
   grid-template-areas: "col1 col2 col3";
-  padding-bottom: 3%;
+  padding-bottom: 2rem; /* Reduced from 3% to rem units for consistency */
 
- 
-
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 48rem) { /* 768px */
     display: grid;
     transform: scale(1);
+    padding-bottom: 1.5rem;
   }
-  @media screen and (max-width: 500px) {
+  
+  @media screen and (max-width: 31.25rem) { /* 500px */
     display: grid;
-    grid-auto-columns: 6.7% 86.6% 6.7%;
+    grid-template-columns: 6.7% 86.6% 6.7%;
+    padding-bottom: 1rem;
   }
 `;
 export const Column1 = styled.div`
@@ -44,7 +47,8 @@ export const Column1 = styled.div`
 export const Column2 = styled.div`
   grid-area: col2;
   width: 100%;
-  height: 100%;
+  max-width: none; /* Ensure no max-width constraint */
+  overflow: visible; /* Ensure content is not clipped */
 `;
 export const Column3 = styled.div`
   grid-area: col3;
@@ -53,32 +57,52 @@ export const Column3 = styled.div`
 
 export const GalleryWrapper = styled.div`
   width: 100%;
-  height: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  row-gap: .6em;
-  column-gap: .6em;
-  @media screen and (max-width: 768px) {
-    gap: 1em;
+  justify-content: center; /* Changed back to center for proper alignment */
+  align-items: flex-start;
+  gap: 1rem; /* Increased gap for better spacing */
+  padding: 0;
+  margin: 0;
+  
+  /* Ensure proper distribution of items */
+  & > * {
+    flex-shrink: 0; /* Prevent items from shrinking */
   }
-  @media screen and (max-width: 567px) {
-    gap: 0.5em;
+  
+  @media screen and (max-width: 64rem) { /* 1024px */
+    gap: 0.875rem;
+    justify-content: center; /* Keep centered on medium screens */
   }
-  @media screen and (max-width: 500px) {
-    gap: 0.5em;
+  
+  @media screen and (max-width: 48rem) { /* 768px */
+    justify-content: center; /* Center on smaller screens for better balance */
+    gap: 0.75rem;
+  }
+  
+  @media screen and (max-width: 35.4375rem) { /* 567px */
+    gap: 0.625rem;
+  }
+  
+  @media screen and (max-width: 31.25rem) { /* 500px */
+    gap: 0.5rem;
+  }
+  
+  @media screen and (max-width: 26.25rem) { /* 420px */
+    gap: 0.375rem;
   }
 `;
 
 export const Anchor = styled(Link)`
- height:100%
- width:100%;
- text-decoration:none;
+  text-decoration: none;
+  display: inline-block; /* Changed from default to inline-block */
+  width: auto; /* Changed from 100% to auto */
+  height: auto; /* Changed from 100% to auto */
+  flex-shrink: 0; /* Prevent shrinking in flex container */
+  
   &:hover {
     transition: all 0.2s ease-in-out;
     cursor: pointer;
-    transform: scale(1.02);
   }
 `;
 export const GalleryImg = styled.img`
@@ -93,61 +117,60 @@ export const GalleryImg = styled.img`
 export const HoverDiv = styled.div`
   height: 100%;
   width: 100%;
-  background-color: RGB(255,255,255,0.6);
-
+  background-color: rgba(255, 255, 255, 0.6); /* Improved rgba syntax */
   opacity: 0;
   display: flex;
-  justify-content:center;
-  align-items:center;
-  text-decoration:none;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
   
   &:hover {
     opacity: 1;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
   }
-  @media screen and (max-width: 500px) {
-    height: 100%;
-    width: 100%;
-  
-  }
-  @media screen and (max-width: 480px) {
-    height: 100%;
-    width: 100%;
-  }
-  @media screen and (max-width: 400px) {
-    height: 100%;
-    width: 100%;
-  }
 `;
 export const HoverDiv2 = styled.p`
-
-  max-width: 150px;
-  max-height: 150px;
-  font-family: "Open Sans";
+  max-width: 9.375rem; /* 150px in rem */
+  max-height: 9.375rem;
+  font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   color: black;
-  font-size: 20px;
+  font-size: clamp(1rem, 2.5vw, 1.25rem); /* Fluid typography: 16px - 20px */
   text-align: center;
   vertical-align: middle;
   display: table-cell;
-  text-decoration:none;
-
-  @media screen and (max-width: 530px) {
-    font-size: 16px;
-  }
+  text-decoration: none;
 `;
 export const CaseDiv = styled.div`
-  height: 230px;
-  width: 230px;
+  height: 12rem; /* Reduced from 14.375rem to allow more items per row */
+  width: 12rem; /* Reduced from 14.375rem to allow more items per row */
   opacity: 0;
+  flex-shrink: 0;
+  margin: 0; /* Ensure no extra margin */
+  
   &:hover {
     opacity: 1;
+  }
+  
+  @media screen and (max-width: 48rem) { /* 768px */
+    height: 10rem;
+    width: 10rem;
+  }
+  
+  @media screen and (max-width: 31.25rem) { /* 500px */
+    height: 8rem;
+    width: 8rem;
+  }
+  
+  @media screen and (max-width: 26.25rem) { /* 420px */
+    height: 7rem;
+    width: 7rem;
   }
 `;
 
 export const GalleryDiv = styled.div`
-  margin-top: 3.125em;
+  margin-top: 0.5rem; /* Further reduced from 1rem to eliminate excessive whitespace */
 `;
 
 /*export const GalleryH1 = styled.h1`

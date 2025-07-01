@@ -362,8 +362,7 @@ useEffect(() => {
       <GalleryContainer>
         <Column1 />
         <Column2>
-       
-        <GalleryWrapper>
+          <GalleryWrapper>
             {filteredImages.map((image, index) => (
               <Anchor key={index} to={photoPaths[index].link}>
                 <GalleryProject13 style={{ backgroundImage: `url(${image})` }}>
@@ -374,11 +373,10 @@ useEffect(() => {
               </Anchor>
             ))}
           </GalleryWrapper>
-         
         </Column2>
         <Column3 />
-        <LoadFromTop />
       </GalleryContainer>
+      <LoadFromTop />
     </GalleryBox>
   );
 };

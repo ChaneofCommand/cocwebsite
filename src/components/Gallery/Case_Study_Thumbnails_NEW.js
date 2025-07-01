@@ -4,8 +4,8 @@ import styled from "styled-components";
 const baseGalleryStyles = `
   background: #fff;
   border-radius: 0;
-  height: 14rem; /* Reduced from 16.25rem (260px) to 14rem (224px) */
-  width: 14rem; /* Reduced from 16.25rem (260px) to 14rem (224px) */
+  height: 16.25rem; /* 260px */
+  width: 16.25rem; /* 260px */
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.2);
@@ -16,7 +16,6 @@ const baseGalleryStyles = `
   flex-wrap: wrap;
   text-align: center;
   position: relative;
-  flex-shrink: 0; /* Prevent shrinking */
   
   &:hover {
     transition: all 0.2s ease-in-out;
@@ -24,59 +23,34 @@ const baseGalleryStyles = `
     transform: scale(1.02);
   }
   
-  @media screen and (max-width: 75rem) { /* 1200px - Start shrinking later */
-    height: 13.5rem; /* Smaller reduction: 216px */
-    width: 13.5rem;
-  }
-  
-  @media screen and (max-width: 64rem) { /* 1024px - More gradual reduction */
-    height: 13rem; /* 208px */
-    width: 13rem;
-  }
-  
-  @media screen and (max-width: 56rem) { /* 896px - Added intermediate breakpoint */
-    height: 12.5rem; /* 200px */
-    width: 12.5rem;
-  }
-  
   @media screen and (max-width: 48rem) { /* 768px */
-    height: 12rem; /* Less reduction: 192px vs previous 176px */
-    width: 12rem;
-  }
-  
-  @media screen and (max-width: 40rem) { /* 640px - Added intermediate breakpoint */
-    height: 11.5rem; /* 184px */
-    width: 11.5rem;
+    height: 14.8125rem; /* 237px */
+    width: 14.8125rem;
   }
   
   @media screen and (max-width: 35.4375rem) { /* 567px */
-    height: 11rem; /* Less reduction: 176px vs previous 160px */
-    width: 11rem;
+    height: 12.375rem; /* 198px */
+    width: 12.375rem;
   }
   
   @media screen and (max-width: 31.25rem) { /* 500px */
-    height: 10.5rem; /* Less reduction: 168px vs previous 144px */
-    width: 10.5rem;
-  }
-  
-  @media screen and (max-width: 28rem) { /* 448px - Added intermediate breakpoint */
-    height: 10rem; /* 160px */
-    width: 10rem;
+    height: 12.375rem; /* 198px */
+    width: 12.375rem;
   }
   
   @media screen and (max-width: 26.875rem) { /* 430px */
-    height: 9.5rem; /* Less reduction: 152px vs previous 128px */
-    width: 9.5rem;
+    height: 9.8125rem; /* 157px */
+    width: 9.8125rem;
   }
   
   @media screen and (max-width: 26.25rem) { /* 420px */
-    height: 9rem; /* Less reduction: 144px vs previous 120px */
-    width: 9rem;
+    height: 9.8125rem; /* 157px */
+    width: 9.8125rem;
   }
   
   @media screen and (max-width: 23.75rem) { /* 380px */
-    height: 8.5rem; /* Less reduction: 136px vs previous 112px */
-    width: 8.5rem;
+    height: 8.9375rem; /* 143px */
+    width: 8.9375rem;
   }
 `;
 

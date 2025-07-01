@@ -3,56 +3,45 @@ import Win from "../../Images/Winifred.JPG";
 
 export const AboutContainer = styled.div`
   max-width: 100%;
-  margin-top: -1em;
-  padding-bottom: 4em;
-  @media screen and (max-width: 1000px) {
+  margin-top: -1rem;
+  padding-bottom: 4rem;
+  
+  @media screen and (max-width: 62.5rem) { /* 1000px */
     max-width: auto;
     box-sizing: border-box;
-  }
-  @media screen and (max-width: 768px) {
-  }
-  @media screen and (max-width: 420px) {
   }
 `;
 
 export const AboutWrapper = styled.div`
   display: grid;
   transform: scale(0.9);
-  margin-top:-3em;
+  margin-top: -3rem;
   height: auto;
   width: auto;
-  
- 
 
-  @media screen and (max-width: 1000px) {
-   max-width: 100%;
-  margin-top:-2em;
+  @media screen and (max-width: 62.5rem) { /* 1000px */
+    max-width: 100%;
+    margin-top: -2rem;
   }
-  @media screen and (max-width: 768px) {
+  
+  @media screen and (max-width: 48rem) { /* 768px */
     transform: scale(1);
     height: auto;
-    margin-top:0;
-    padding 0em;
-   }
-
-   @media screen and (max-width: 420px) {
- 
-
-   }
-
+    margin-top: 0;
+    padding: 0;
+  }
 `;
 
 export const AboutRow = styled.div`
   display: grid;
-  grid-auto-columns: 5.45% 44.55% 6.7% 37.85% 5.45%;
+  grid-template-columns: 5.45% 44.55% 6.7% 37.85% 5.45%;
   grid-template-areas: "col1 col2 col3 col4 col5";
 
-  @media screen and (max-width: 1000px) {
- 
-  }
-  @media screen and (max-width: 768px) {
-    grid-template-areas: "col1 col2 col5" "col1 col4 col5";
-    grid-auto-columns: 6.7% 86.6% 6.7%;
+  @media screen and (max-width: 48rem) { /* 768px */
+    grid-template-areas: 
+      "col1 col2 col5" 
+      "col1 col4 col5";
+    grid-template-columns: 6.7% 86.6% 6.7%;
   }
 `;
 export const Column1 = styled.div`
@@ -79,142 +68,86 @@ export const Column5 = styled.div`
 
 export const TextWrapper = styled.div`
   max-width: 100%;
-  margin-top: -1.875em;
+  margin-top: -1.875rem;
 
-  @media screen and (max-width: 1000px) {
-  }
-  @media screen and (max-width: 768px) {
-    margin-top: 0em;
-  }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 48rem) { /* 768px */
+    margin-top: 0;
   }
 `;
 
 export const Heading = styled.h1`
-  font-size: 44px;
-  font-family: Open Sans;
+  font-size: clamp(1.869rem, 4vw, 2.75rem); /* Reduced shrinking: was 1.625rem, now 1.869rem (15% less shrinking) */
+  font-family: 'Open Sans', sans-serif;
   color: black;
-  font-weight: 1;
-  margin-left:1%;
+  font-weight: 400;
+  margin-left: 1%;
   
-  @media screen and (max-width: 1000px) {
-    font-size 34px;
-   
-}
-
-  @media screen and (max-width: 768px) {
-      font-size 28px;
-      margin-top:4.6%
+  @media screen and (max-width: 48rem) { /* 768px */
+    margin-top: 4.6%;
   }
-  @media screen and (max-width: 500px) {
-    font-size 28px;
-    margin-top:6.1%;
-}
-  @media screen and (max-width: 420px) {
-        font-size 26px;
-      
+  
+  @media screen and (max-width: 31.25rem) { /* 500px */
+    margin-top: 6.1%;
   }
-  `;
+`;
 
 export const Subtitle = styled.p`
   max-width: 100%;
-  
-  font-size: 24px;
-  font-family: Open Sans;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem); /* Reduced shrinking: was 1rem, now 1.15rem (15% less shrinking) */
+  font-family: 'Open Sans', sans-serif;
   color: black;
-  margin-top: .83em;
+  margin-top: 0.83em;
+  line-height: 1.5;
  
-  @media screen and (max-width:1145px){
-    
-    font-size: 22px;
-    
+  @media screen and (max-width: 48rem) { /* 768px */
+    line-height: 1.67; /* 30px line height for 18px font */
   }
-  @media screen and (max-width:768px){
-    margin-left:none;
-    line-height: 30px;
-    font-size: 18px;
-    
-  }
-  @media screen and (max-width:500px){
-    margin-left:none;
-  }
-   @media screen and (max-width: 420px) {
-    font-size 16px;
-
-  `;
+`;
 
 export const ImgWrap = styled.div`
-height:100%;
-width:100%;
-overflow:hidden;
-display:flex;
-justify-content:center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
 
-box-sizing-border-box;
-
-
-@media screen and (max-width: 1190px) {
-
-
-}
-@media screen and (max-width: 1082px) {
-
-
-}
-@media screen and (max-width: 1000px) {
-margin-left:0em;
-margin-top:2.5em;
-}
-@media screen and (max-width: 850px) {
-  margin-top:6em;
-    
+  @media screen and (max-width: 62.5rem) { /* 1000px */
+    margin-top: 2.5rem;
+  }
+  
+  @media screen and (max-width: 53.125rem) { /* 850px */
+    margin-top: 6rem;
   }
 
-@media screen and (max-width: 768px) {
-
-  margin-top:1.5625em;
-
-}
-@media screen and (max-width: 500px) {
-margin-left:0;
+  @media screen and (max-width: 48rem) { /* 768px */
+    margin-top: 1.5625rem;
+  }
+  
+  @media screen and (max-width: 31.25rem) { /* 500px */
+    margin-left: 0;
+  }
 `;
 
 export const Img = styled.img`
   object-fit: cover;
-  height: 450px;
-  width: 400px;
-  margin-top: 1em;
-  object-position: center -3em;
+  height: min(33.75rem, 60vh); /* Reduced to 20% height increase from original */
+  width: min(25rem, 90vw); /* Original width maintained */
+  margin-top: 1rem;
+  object-position: center -3rem;
   background-repeat: no-repeat;
-
-  @media screen and (max-width: 1000px) {
-  }
-  @media screen and (max-width: 768px) {
-  }
-  @media screen and (max-width: 521px) {
-  }
-  @media screen and (max-width: 500px) {
-  }
-  @media screen and (max-width: 420px) {
-  }
 `;
 export const Underline = styled.hr`
-border: 1px solid black;
-width: 35%;
-margin-top -1.875em;
-margin-left:0%;
-@media screen and (max-width: 1000px) {
-  margin-top -1.125em;
-  width:50%
+  border: 1px solid black;
+  width: clamp(28.75%, 9.2vw + 17.25%, 57.5%); /* Increased by 15%: was 25%-50%, now 28.75%-57.5% */
+  margin-top: -1.875rem;
+  margin-left: 0;
+  
+  @media screen and (max-width: 62.5rem) { /* 1000px */
+    margin-top: -1.125rem;
   }
-  @media screen and (max-width: 768px) {
-    width:25%;
-    margin-top -1.125em;
-    }
-    @media screen and (max-width: 500px) {
-      width:30%;
-    @media screen and (max-width: 420px) {
-        width:30%;
-     
-      }
+  
+  @media screen and (max-width: 48rem) { /* 768px */
+    margin-top: -1.125rem;
+  }
 `;
