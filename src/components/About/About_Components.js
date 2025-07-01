@@ -3,25 +3,30 @@ import Win from "../../Images/Winifred.JPG";
 
 export const AboutContainer = styled.div`
   max-width: 100%;
-  margin-top: -1rem;
+  margin-top: 2rem; /* Reduced by a third from 3rem */
   padding-bottom: 4rem;
   
   @media screen and (max-width: 62.5rem) { /* 1000px */
     max-width: auto;
     box-sizing: border-box;
+    margin-top: 1.67rem; /* Reduced by a third from 2.5rem */
+  }
+
+  @media screen and (max-width: 48rem) { /* 768px */
+    margin-top: 0; /* No margin for mobile */
   }
 `;
 
 export const AboutWrapper = styled.div`
   display: grid;
   transform: scale(0.9);
-  margin-top: -3rem;
+  margin-top: 0; /* Removed negative margin */
   height: auto;
   width: auto;
 
   @media screen and (max-width: 62.5rem) { /* 1000px */
     max-width: 100%;
-    margin-top: -2rem;
+    margin-top: 0;
   }
   
   @media screen and (max-width: 48rem) { /* 768px */

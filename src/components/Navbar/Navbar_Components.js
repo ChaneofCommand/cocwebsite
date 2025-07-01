@@ -270,19 +270,19 @@ export const NavCoCLogo = styled.img`
 
   @media screen and (max-width: 48rem) { /* 768px */
     margin-top: 1.25rem;
-    margin-left: 1rem; /* Bring in from left side */
+    margin-left: 6.7%; /* Aligned with content column start */
     height: clamp(4.375rem, 10vw, 5.625rem); /* 70px - 90px */
   }
 
   @media screen and (max-width: 31.25rem) { /* 500px */
     margin-top: 1.25rem;
-    margin-left: 1.25rem; /* Bring in more from left side */
+    margin-left: 6.7%; /* Aligned with content column start */
     height: clamp(4rem, 12vw, 5rem); /* 64px - 80px */
   }
 
   @media screen and (max-width: 26.25rem) { /* 420px */
     margin-top: 1.25rem;
-    margin-left: 1.5rem; /* Bring in even more from left side */
+    margin-left: 6.7%; /* Aligned with content column start */
     height: clamp(3.5rem, 15vw, 4.375rem); /* 56px - 70px */
   }
 `;

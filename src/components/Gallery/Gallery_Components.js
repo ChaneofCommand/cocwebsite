@@ -61,7 +61,7 @@ export const GalleryWrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center; /* Changed back to center for proper alignment */
   align-items: flex-start;
-  gap: 1rem; /* Increased gap for better spacing */
+  gap: 0.75rem; /* Reduced from 1rem for tighter spacing */
   padding: 0;
   margin: 0;
   
@@ -71,25 +71,25 @@ export const GalleryWrapper = styled.div`
   }
   
   @media screen and (max-width: 64rem) { /* 1024px */
-    gap: 0.875rem;
+    gap: 0.625rem; /* Reduced from 0.875rem */
     justify-content: center; /* Keep centered on medium screens */
   }
   
   @media screen and (max-width: 48rem) { /* 768px */
     justify-content: center; /* Center on smaller screens for better balance */
-    gap: 0.75rem;
+    gap: 0.5rem; /* Reduced from 0.75rem */
   }
   
   @media screen and (max-width: 35.4375rem) { /* 567px */
-    gap: 0.625rem;
+    gap: 0.375rem; /* Reduced from 0.625rem */
   }
   
   @media screen and (max-width: 31.25rem) { /* 500px */
-    gap: 0.5rem;
+    gap: 0.25rem; /* Reduced from 0.5rem */
   }
   
   @media screen and (max-width: 26.25rem) { /* 420px */
-    gap: 0.375rem;
+    gap: 0.1875rem; /* Reduced from 0.375rem */
   }
 `;
 

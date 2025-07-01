@@ -14,9 +14,13 @@ export const Heading = styled.h1`
   box-sizing: border-box;
   overflow-wrap: break-word;
 
+  @media screen and (max-width: 48rem) { /* 768px */
+    margin-top: 0; /* No margin for mobile */
+  }
+
   @media screen and (max-width: 26.25rem) { /* 420px */
     font-size: clamp(1.25rem, 5vw, 1.75rem); /* 20px - 28px */
-    margin-top: clamp(0.5rem, 3vh, 1.5rem);
+    margin-top: 0; /* No margin for mobile */
   }
 `;
 export const Underline = styled.hr`
@@ -301,7 +305,7 @@ export const ColumnA2 = styled.div`
   background: rgba(255, 255, 255, 0.85);
   color: black;
   padding: clamp(1rem, 3vw, 2rem);
-  border-radius: 0.5rem;
+ 
   backdrop-filter: blur(8px);
   box-sizing: border-box;
   overflow-wrap: break-word;
@@ -371,7 +375,7 @@ export const Column2 = styled.div`
   background-color: rgba(255, 255, 255, 0.9);
   box-sizing: border-box;
   padding: clamp(1rem, 4vw, 3rem);
-  border-radius: 0.5rem;
+  
   backdrop-filter: blur(8px);
   overflow-wrap: break-word;
 `;
@@ -627,10 +631,11 @@ export const PLink = styled.div`
   font-size: clamp(1rem, 2.5vw, 1.375rem); /* Fluid: 16px - 22px */
   font-weight: bold;
   font-family: 'Open Sans', sans-serif;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  word-break: break-word;
   line-height: 1.3;
+  max-width: 100%;
+  box-sizing: border-box;
 `;
 export const PA = styled.a`
   color: black;
@@ -640,6 +645,10 @@ export const PA = styled.a`
   text-decoration: none;
   transition: color 0.2s ease-in-out;
   line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+  box-sizing: border-box;
 
   &:hover {
     color: #666;

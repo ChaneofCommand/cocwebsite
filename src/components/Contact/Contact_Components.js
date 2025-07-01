@@ -6,7 +6,15 @@ export const AboutContainer = styled.div`
   box-display: border-box;
   max-width: 100%;
   height: auto;
-  margin-top: -1rem;
+  margin-top: 2rem; /* Reduced by a third from 3rem */
+
+  @media screen and (max-width: 62.5rem) { /* 1000px */
+    margin-top: 1.67rem; /* Reduced by a third from 2.5rem */
+  }
+
+  @media screen and (max-width: 48rem) { /* 768px */
+    margin-top: 0; /* No margin for mobile */
+  }
 `;
 
 export const AboutWrapper = styled.div`
@@ -16,11 +24,12 @@ export const AboutWrapper = styled.div`
   width: 100%;
   margin-bottom: 3%;
   transform: scale(0.9);
-  margin-top: -3rem;
+  margin-top: 0; /* Removed negative margin */
  
   @media screen and (max-width: 62.5rem) { /* 1000px */
     width: 100%;
     height: auto;
+    margin-top: 0;
   }
   
   @media screen and (max-width: 48rem) { /* 768px */
