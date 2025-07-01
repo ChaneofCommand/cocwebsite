@@ -193,8 +193,8 @@ const AdidasCreator = () => {
                   </DataDiv>
 
                   <DataDiv>
-                    <BoldH1>BUDGET:</BoldH1>
-                    <DataH1>$1 Million</DataH1>
+                    <BoldH1></BoldH1>
+                    <DataH1></DataH1>
                   </DataDiv>
                 </DataContainer>
 
