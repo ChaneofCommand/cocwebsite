@@ -42,7 +42,7 @@ import { MdArrowForwardIos, MdArrowBackIos, MdClose } from "react-icons/md";
 
 import { storage } from "../../Firebase/firebase"; 
 const BapeXKidSuper = () => {
-  console.log("BapeXKidSuper component rendering...");
+  console.log("BapeXKidSuper component rendering - Updated version Oct 29, 2024...");
   const [images, setImages] = useState([]);
 
   const photoPaths = [
@@ -182,19 +182,19 @@ const BapeXKidSuper = () => {
 
                   <DataDiv>
                     <BoldH1>AUDIENCE:</BoldH1>
-                    <DataH1>Invited influncers</DataH1>
+                    <DataH1>Invited Influencers</DataH1>
                   </DataDiv>
 
                   <DataDiv>
                     <BoldH1>TALENT:</BoldH1>
                     <DataH1>
-                      Master Kidsuper Screenprinter
+                    Kidsuper AKA Colm Dillane
                     </DataH1>
                   </DataDiv>
                 </DataContainer>
 
                 <Subtitle2>
-                  <span style={{ FontWeight: "bold" }}>I</span>n collaboration with Bape, Kidsuper hosted a screenprinting class at their Brooklyn location in April 2024. During this class, invited influencers were able to select iconic Bape and Kidsuper prints which they got to learn how to apply themselves to Bape t-shirts or any Bape clothing items that they brought with them. Attendees were also able to get custom Bape t-shirts printed in-house by master screenprinter Kidsuper.
+                  <span style={{ FontWeight: "bold" }}>I</span>n collboration with Bape, Kidsuper AKA Colm Dillane hosted a screenprinting class at their Brooklyn location in April 2025. During this class, invited infleuncers were able to select iconic Bape and Kidsuper prints which they got to learn how to apply themselves to Bape tshirts or any Bape clothing items that they brought with them from Dillane himself. Attendees were also able to get custom Bape tshirts printed in house by master screenprinters.
                 </Subtitle2>
                 <PressLinks>
                   <PLBox>
@@ -202,114 +202,38 @@ const BapeXKidSuper = () => {
                   </PLBox>
                   <PLBox>
                     <PLink>
-                      Time Out New York:{" "}
+                      Bape:{" "}
                       <PA
                         target="new"
-                        href="https://www.timeout.com/newyork/news/walk-through-50-years-of-hip-hop-history-at-this-new-immersive-exhibit-in-nyc-070623"
+                        href="https://en.jp.bape.com/blogs/news/asuperape-kidsuper"
                       >
-                        https://www.timeout.com/newyork/news/walk-through-50-years-of-hip-hop-history-at-this-new-immersive-exhibit-in-nyc-070623{" "}
+                        https://en.jp.bape.com/blogs/news/asuperape-kidsuper
                       </PA>
                     </PLink>
                   </PLBox>
                   <PLBox>
                     {" "}
                     <PLink>
-                      Billboard:{" "}
+                      Collab Review:{" "}
                       <PA
                         target="new"
-                        href="https://www.billboard.com/culture/product-recommendations/hip-hop-til-infinity-exhibition-how-get-tickets-1235554519/ "
+                        href="https://collabcode.substack.com/p/collab-review-kid-super-x-bape-spring "
                       >
-                        https://www.billboard.com/culture/product-recommendations/hip-hop-til-infinity-exhibition-how-get-tickets-1235554519/{" "}
+                        https://collabcode.substack.com/p/collab-review-kid-super-x-bape-spring
                       </PA>
                     </PLink>
                   </PLBox>
-                  <PLBox>
-                    <PLink>
-                    Thrillist:{" "}
-                      <PA
-                        target="new"
-                        href="https://www.thrillist.com/lifestyle/new-york/hip-hop-immersive-art-exhibit "
-                      >
-                        https://www.thrillist.com/lifestyle/new-york/hip-hop-immersive-art-exhibit{" "}
-                      </PA>
-                    </PLink>
-                  </PLBox>
-                  <PLBox>
-                    <PLink>
-                    KTLA:{" "}
-                      <PA
-                        target="new"
-                        href="https://ktla.com/morning-news/hip-hop-til-infinity-honors-50-years-of-hip-hop-with-hollywood-immersive-exhibit/ "
-                      >
-                        https://ktla.com/morning-news/hip-hop-til-infinity-honors-50-years-of-hip-hop-with-hollywood-immersive-exhibit/{" "}
-                      </PA>
-                    </PLink>
-                  </PLBox>
-                  <PLBox>
-                    <PLink>
-                    Artnet News:{" "}
-                      <PA
-                        target="new"
-                        href="https://news.artnet.com/art-world/immersive-experience-hip-hop-til-infinity-hall-des-lumieres-2335114  "
-                      >
-                        https://news.artnet.com/art-world/immersive-experience-hip-hop-til-infinity-hall-des-lumieres-2335114{" "}
-                      </PA>
-                    </PLink>
-                  </PLBox>
-                  <PLBox>
-                    <PLink>
-                    USA Today:{" "}
-                      <PA
-                        target="new"
-                        href="https://www.usatoday.com/story/travel/2023/08/04/hip-hop-at-50-hall-des-lumieres/70514066007/  "
-                      >
-                        https://www.usatoday.com/story/travel/2023/08/04/hip-hop-at-50-hall-des-lumieres/70514066007/{" "}
-                      </PA>
-                    </PLink>
-                  </PLBox>
-                  <PLBox>
-                    <PLink>
-                    Fast Company:{" "}
-                      <PA
-                        target="new"
-                        href="https://www.fastcompany.com/90925941/hall-des-lumieres-hip-hop-infinity   "
-                      >
-                        https://www.fastcompany.com/90925941/hall-des-lumieres-hip-hop-infinity{" "}
-                      </PA>
-                    </PLink>
-                  </PLBox>
-                  <PLBox>
-                    <PLink>
-                    Audacy/1010 Wins:{" "}
-                      <PA
-                        target="new"
-                        href="https://www.audacy.com/1010wins/news/local/immersive-experience-hip-hop-til-infinity-covers-5-decades   "
-                      >
-                        https://www.audacy.com/1010wins/news/local/immersive-experience-hip-hop-til-infinity-covers-5-decades{" "}
-                      </PA>
-                    </PLink>
-                  </PLBox>
-                  <PLBox>
-                    <PLink>
-                    Secret Los Angeles:{" "}
-                      <PA
-                        target="new"
-                        href="https://secretlosangeles.com/hip-hop-til-infinity-la-now-open/    "
-                      >
-                        https://secretlosangeles.com/hip-hop-til-infinity-la-now-open/{" "}
-                      </PA>
-                    </PLink>
-                  </PLBox>
+               
                 </PressLinks>
-             
-                 <PlayerWrapper>
-                 <PlayerDiv>  <ReactPlayer
-                    url={video1}
-                   width="100%"
-                    height="100%"
-                    style={{
-                   
-                      backgroundColor: "black",
+
+                <PlayerWrapper>
+                  <PlayerDiv>
+                    <ReactPlayer
+                      url={video1}
+                      width="100%"
+                      height="100%"
+                      style={{
+                        backgroundColor: "black",
                     
                       
                     }}
