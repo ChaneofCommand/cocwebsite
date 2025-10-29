@@ -333,18 +333,39 @@ const Gallery = () => {
     // Add more photo paths as needed
   ];
   useEffect(() => {
-    let imagePromises = photoPaths.map((path) => {
-      const imageRef = ref(storage, path.photolink)
-      return getDownloadURL(imageRef);
-    });
+    let isMounted = true; // Cleanup flag
 
-    Promise.all(imagePromises)
-      .then((urls) => {
-        setImages(urls);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const loadGalleryImages = async () => {
+      try {
+        // Load gallery images with error handling
+        const imagePromises = photoPaths.map((path) => {
+          const imageRef = ref(storage, path.photolink);
+          return getDownloadURL(imageRef).catch(error => {
+            console.error(`Error loading image ${path.photolink}:`, error);
+            return null; // Return null for failed images
+          });
+        });
+
+        // Wait for all images to load
+        const imageUrls = await Promise.all(imagePromises);
+
+        // Only update state if component is still mounted
+        if (isMounted) {
+          // Filter out null values from failed image loads
+          const validImageUrls = imageUrls.filter(url => url !== null);
+          setImages(validImageUrls);
+        }
+      } catch (error) {
+        console.error("Error in loadGalleryImages:", error);
+      }
+    };
+
+    loadGalleryImages();
+
+    // Cleanup function
+    return () => {
+      isMounted = false;
+    };
   }, []);
   const [selectedKeyword, setSelectedKeyword] = useState(null);
   const location = useLocation();

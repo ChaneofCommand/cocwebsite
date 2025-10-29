@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import LoadFromTop from "../../../Hooks/LoadFromTop";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
@@ -35,83 +35,110 @@ import {
 } from "../Case_Study_Template";
 import { BopWrapper } from "../Case_Study_Images/BOP_PHOTOS";
 import { PhotoDiv } from "../Case_Study_Images/AMAZON_PHOTOS";
-import { useState } from "react";
 import styles from "../Case_Studies/CaseStudyTemplate.module.css";
 import { MdArrowForwardIos, MdArrowBackIos, MdClose } from "react-icons/md";
 
 
-import { storage } from "../../Firebase/firebase"; 
+import { storage } from "../../Firebase/firebase";
 const Camouflage = () => {
-
-  const [photoUrls, setPhotoUrls] = useState([]);
-
- 
-  
+  console.log("Camouflage component rendering...");
+  const [loading, setLoading] = useState(true);
   const [images, setImages] = useState([]);
 
   const photoPaths = [
-  "Camouflage/Camouflage1.jpg",
-  "Camouflage/Camouflage2.jpg",
-  "Camouflage/Camouflage3.jpg",
-  "Camouflage/Camouflage4.jpg",
+    "Camouflage/camouflage1.jpg",
+    "Camouflage/camouflage2.jpg",
+    "Camouflage/camouflage3.jpeg",
+    "Camouflage/camouflage4.jpeg",
 
-       // Add more photo paths as needed
-      ];
-      const [img1, setImg1] = useState(null);
-      const [video1, setVideo1] = useState(null);
-      const [video2, setVideo2] = useState(null);
-      useEffect(() => {
-        let imagePromises = photoPaths.map((path) => {
+    // Add more photo paths as needed
+  ];
+  const [img1, setImg1] = useState(null);
+  const [video1, setVideo1] = useState(null);
+  const [video2, setVideo2] = useState(null);
+  useEffect(() => {
+    let isMounted = true; // Cleanup flag
+
+    const loadFirebaseAssets = async () => {
+      console.log("Loading Firebase assets...");
+      try {
+        // Create refs
+        const img1Ref = ref(storage, "Camouflage/camouflage3.jpeg");
+        const video1Ref = ref(storage, "Videos/Camouflage/Camouflage1.mp4");
+        const video2Ref = ref(storage, "Videos/Camouflage/fourfreedoms.mp4");
+
+        // Load main image and videos with error handling
+        const assetPromises = [
+          getDownloadURL(img1Ref).catch(error => {
+            console.error("Error loading main image:", error);
+            return null;
+          }),
+          getDownloadURL(video1Ref).catch(error => {
+            console.error("Error loading video 1:", error);
+            return null;
+          }),
+          getDownloadURL(video2Ref).catch(error => {
+            console.error("Error loading video 2:", error);
+            return null;
+          })
+        ];
+
+        // Load gallery images
+        const imagePromises = photoPaths.map((path) => {
           const imageRef = ref(storage, path);
-          const img1Ref = ref(storage,   "Camouflage/Camouflage3.jpeg",);
-          const video1Ref = ref(storage,   "Videos/Camouflage/Camouflage1.mp4",);
-          const video2Ref = ref(storage,   "Videos/Camouflage/Camouflage2.mp4",);
-          getDownloadURL(img1Ref)
-          .then((url) => {
-            // The download URL is now available to use
-            setImg1(url);
-          })
-          getDownloadURL(video1Ref)
-          .then((url) => {
-            // The download URL is now available to use
-            setVideo1(url);
-          })
-          getDownloadURL(video2Ref)
-          .then((url) => {
-            // The download URL is now available to use
-            setVideo2(url);
-          })
-          return getDownloadURL(imageRef);
-         
-        });
-    
-        Promise.all(imagePromises)
-          .then((urls) => {
-            setImages(urls);
-          })
-          .catch((error) => {
-            console.log(error);
+          return getDownloadURL(imageRef).catch(error => {
+            console.error(`Error loading image ${path}:`, error);
+            return null; // Return null for failed images
           });
-      }, []);
-// Define a function to import all images from a directory
+        });
 
+        // Wait for all assets to load
+        const [img1Url, video1Url, video2Url] = await Promise.all(assetPromises);
+        const imageUrls = await Promise.all(imagePromises);
 
-const [currentImageIndex, setCurrentImageIndex] = useState(0);
+        // Only update state if component is still mounted
+        if (isMounted) {
+          if (img1Url) setImg1(img1Url);
+          if (video1Url) setVideo1(video1Url);
+          if (video2Url) setVideo2(video2Url);
+          
+          // Filter out null values from failed image loads
+          const validImageUrls = imageUrls.filter(url => url !== null);
+          setImages(validImageUrls);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error("Error in loadFirebaseAssets:", error);
+        if (isMounted) {
+          setLoading(false);
+        }
+      }
+    };
 
-const nextImage = () => {
-  setCurrentImageIndex((prevIndex) =>
-    prevIndex === images.length - 1 ? 0 : prevIndex + 1
-  );
-  console.log(currentImageIndex);
-};
+    loadFirebaseAssets();
 
-const prevImage = () => {
-  setCurrentImageIndex((prevIndex) =>
-    prevIndex === 0 ? images.length - 1 : prevIndex - 1
-  );
-  console.log(currentImageIndex);
-};
-const imgnum = currentImageIndex + 1;
+    // Cleanup function
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+    console.log(currentImageIndex);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+    console.log(currentImageIndex);
+  };
+  const imgnum = currentImageIndex + 1;
   const zoomIn = (imageIndex) => {
     // Your zoom-in logic here
     console.log(`Zooming in on image ${imageIndex}`);
@@ -123,6 +150,7 @@ const imgnum = currentImageIndex + 1;
     setIsVisible(!visible);
     console.log(visible);
   };
+
   return (
     <>
       <BopWrapper>
@@ -178,28 +206,9 @@ const imgnum = currentImageIndex + 1;
                 </DataContainer>
 
                 <Subtitle2>
-                  <span style={{ FontWeight: "bold" }}>M</span>edia brand Mass
-                  Appeal tapped CoC to develop “Hip-Hop 'Til Infinity,” an
-                  evocative digital installation celebrating 50 years of
-                  hip-hop. CoC was involved with procuring rare,
-                  never-before-seen artifacts for the exhibition and producing
-                  highly Instagrammable ‘surprise and delight’ props, taking
-                  guests on an immersive journey through hip-hop’s different
-                  eras and regions. After launching the exhibition at Hall Des
-                  Lumières during New York City’s #HipHop50 celebrations in
-                  August 2023, the exhibition went bigger and better in Los
-                  Angeles with a four-month activation that kicked off just
-                  before the start of Grammy season in January 2024. CoC helped
-                  curate artifacts for the museum, developed the design for and
-                  oversaw the buildout of the raw site, procuring vendors and
-                  overseeing buildout of new installations including a
-                  recreation of the infamous Death Row Records electric chair
-                  and Snoop Dogg's 'Doggy Den,' dedicated to the 30 year
-                  anniversary of Doggystyle. CoC also managed partnerships with
-                  Morrison Hotel Galleries and photographer Estevan Oriol to
-                  round out the exhibit. In addition to ticket sales and social
-                  media buzz, the pop-up produced massive retail sales via the
-                  carefully merchandised gift shop.
+                  <span style={{ FontWeight: "bold" }}>I</span>n the fall of 2025, the grand Four Freedoms Memorial situated at the tip of the Four Freedoms State Park on Roosevelt Island, was entirely wreathed in a layer of camouflage. Designed by Renowned contemporary artitst Aiweiwei; "Camouflage" seeks to convey the modern nuances of war.
+                   Relating pets left behind in war, and cats left behind at the cat sanctuary on Roosevelt island, Aiweiwei's "Camouflauge" is comprised of several different images of cats rather than abstract shapes. The hallowed setting of the morial to Roosevelt's Four Freedomns: of speech, from fear, of worship, and from want; Coupled with a Ukranian proverb "Кому війна, кому мати рідна" which says for some people, war is war; for others, war is the dear mother'
+                   brings to light the duality of war, where some profit and many suffer and at what cost. The exhibit also had an interactive experience for guests, who were welcome to write positive messages on the back of colorful ribbons, each printed with one of the four freedoms, which they could then themselves tie onto the camouflage for all to see.
                 </Subtitle2>
                 <PressLinks>
                   <PLBox>
@@ -207,135 +216,81 @@ const imgnum = currentImageIndex + 1;
                   </PLBox>
                   <PLBox>
                     <PLink>
-                      Time Out New York:{" "}
+                      Four Freedoms Conservancy:{" "}
                       <PA
                         target="new"
-                        href="https://www.timeout.com/newyork/news/walk-through-50-years-of-hip-hop-history-at-this-new-immersive-exhibit-in-nyc-070623"
+                        href="https://www.fdrfourfreedomspark.org/art-x-freedom/"
                       >
-                        https://www.timeout.com/newyork/news/walk-through-50-years-of-hip-hop-history-at-this-new-immersive-exhibit-in-nyc-070623{" "}
+                        https://www.fdrfourfreedomspark.org/art-x-freedom/{" "}
                       </PA>
                     </PLink>
                   </PLBox>
                   <PLBox>
                     {" "}
                     <PLink>
-                      Billboard:{" "}
+                      PBS:{" "}
                       <PA
                         target="new"
-                        href="https://www.billboard.com/culture/product-recommendations/hip-hop-til-infinity-exhibition-how-get-tickets-1235554519/ "
+                        href="https://www.pbs.org/newshour/show/ai-weiweis-camouflage-art-installation-reflects-on-fdrs-four-freedoms"
                       >
-                        https://www.billboard.com/culture/product-recommendations/hip-hop-til-infinity-exhibition-how-get-tickets-1235554519/{" "}
+                        https://www.pbs.org/newshour/show/ai-weiweis-camouflage-art-installation-reflects-on-fdrs-four-freedoms{" "}
                       </PA>
                     </PLink>
                   </PLBox>
                   <PLBox>
                     <PLink>
-                    Thrillist:{" "}
+                      The Architect's Newspaper:{" "}
                       <PA
                         target="new"
-                        href="https://www.thrillist.com/lifestyle/new-york/hip-hop-immersive-art-exhibit "
+                        href="https://www.archpaper.com/2025/09/ai-weiwei-installation-roosevelt-island/ "
                       >
-                        https://www.thrillist.com/lifestyle/new-york/hip-hop-immersive-art-exhibit{" "}
+                        https://www.archpaper.com/2025/09/ai-weiwei-installation-roosevelt-island/
                       </PA>
                     </PLink>
                   </PLBox>
                   <PLBox>
                     <PLink>
-                    KTLA:{" "}
+                      The Art Newspaper:{" "}
                       <PA
                         target="new"
-                        href="https://ktla.com/morning-news/hip-hop-til-infinity-honors-50-years-of-hip-hop-with-hollywood-immersive-exhibit/ "
+                        href="https://www.theartnewspaper.com/2025/09/03/ai-weiwei-camouflage-cat-four-freedoms-park-new-york "
                       >
-                        https://ktla.com/morning-news/hip-hop-til-infinity-honors-50-years-of-hip-hop-with-hollywood-immersive-exhibit/{" "}
+                        https://www.theartnewspaper.com/2025/09/03/ai-weiwei-camouflage-cat-four-freedoms-park-new-york{" "}
                       </PA>
                     </PLink>
                   </PLBox>
-                  <PLBox>
-                    <PLink>
-                    Artnet News:{" "}
-                      <PA
-                        target="new"
-                        href="https://news.artnet.com/art-world/immersive-experience-hip-hop-til-infinity-hall-des-lumieres-2335114  "
-                      >
-                        https://news.artnet.com/art-world/immersive-experience-hip-hop-til-infinity-hall-des-lumieres-2335114{" "}
-                      </PA>
-                    </PLink>
-                  </PLBox>
-                  <PLBox>
-                    <PLink>
-                    USA Today:{" "}
-                      <PA
-                        target="new"
-                        href="https://www.usatoday.com/story/travel/2023/08/04/hip-hop-at-50-hall-des-lumieres/70514066007/  "
-                      >
-                        https://www.usatoday.com/story/travel/2023/08/04/hip-hop-at-50-hall-des-lumieres/70514066007/{" "}
-                      </PA>
-                    </PLink>
-                  </PLBox>
-                  <PLBox>
-                    <PLink>
-                    Fast Company:{" "}
-                      <PA
-                        target="new"
-                        href="https://www.fastcompany.com/90925941/hall-des-lumieres-hip-hop-infinity   "
-                      >
-                        https://www.fastcompany.com/90925941/hall-des-lumieres-hip-hop-infinity{" "}
-                      </PA>
-                    </PLink>
-                  </PLBox>
-                  <PLBox>
-                    <PLink>
-                    Audacy/1010 Wins:{" "}
-                      <PA
-                        target="new"
-                        href="https://www.audacy.com/1010wins/news/local/immersive-experience-hip-hop-til-infinity-covers-5-decades   "
-                      >
-                        https://www.audacy.com/1010wins/news/local/immersive-experience-hip-hop-til-infinity-covers-5-decades{" "}
-                      </PA>
-                    </PLink>
-                  </PLBox>
-                  <PLBox>
-                    <PLink>
-                    Secret Los Angeles:{" "}
-                      <PA
-                        target="new"
-                        href="https://secretlosangeles.com/hip-hop-til-infinity-la-now-open/    "
-                      >
-                        https://secretlosangeles.com/hip-hop-til-infinity-la-now-open/{" "}
-                      </PA>
-                    </PLink>
-                  </PLBox>
+                  
                 </PressLinks>
-             
-                 <PlayerWrapper>
-                 <PlayerDiv>  <ReactPlayer
+
+                <PlayerWrapper>
+                  <PlayerDiv>  <ReactPlayer
                     url={video1}
-                   width="100%"
+                    width="100%"
                     height="100%"
                     style={{
-                   
+
                       backgroundColor: "black",
-                    
-                      
+
+
                     }}
                     controls={true}
                   /></PlayerDiv>
-                   
-             
-                   <PlayerDiv>  <ReactPlayer
+
+
+                  <PlayerDiv>  <ReactPlayer
                     url={video2}
-                   width="100%"
+                    width="100%"
                     height="100%"
                     style={{
-                   
+
                       backgroundColor: "black",
-                    
-                      
+
+
                     }}
                     controls={true}
                   /></PlayerDiv>
-                   
-             </PlayerWrapper>
+
+                </PlayerWrapper>
               </Column2>
               <Column3></Column3>
             </PhotoDiv>
@@ -347,18 +302,18 @@ const imgnum = currentImageIndex + 1;
         <AboutWrapper2 id="two">
           <ColumnA1 />
           <ColumnA2B>
-          <Imagebox>
-            {images.map((image, index) => (
-          <Image
-            key={index}
-            src={image}
-            alt={`Image ${index + 1}`}
+            <Imagebox>
+              {images.map((image, index) => (
+                <Image
+                  key={index}
+                  src={image}
+                  alt={`Image ${index + 1}`}
                   onClick={() => {
                     setCurrentImageIndex(index);
                     toggle();
                   }}
-          />
-        ))}
+                />
+              ))}
             </Imagebox>
             <div className={visible ? styles.lightbox : styles.hidden}>
               <Back

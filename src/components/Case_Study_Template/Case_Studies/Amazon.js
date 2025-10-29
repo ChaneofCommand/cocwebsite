@@ -52,29 +52,50 @@ const photoPaths = [
   const [video1, setVideo1] = useState(null);
   
   useEffect(() => {
-    let imagePromises = photoPaths.map((path) => {
-      const imageRef = ref(storage, path);
-      const img1Ref = ref(storage,  "AmazonAds/AA1.png",);
-    
+    let isMounted = true; // Cleanup flag
 
-      getDownloadURL(img1Ref)
-      .then((url) => {
-        // The download URL is now available to use
-        setImg1(url);
-      })
-  
-  
-      return getDownloadURL(imageRef);
-     
-    });
+    const loadFirebaseAssets = async () => {
+      try {
+        // Create refs
+        const img1Ref = ref(storage, "AmazonAds/AA1.png");
 
-    Promise.all(imagePromises)
-      .then((urls) => {
-        setImages(urls);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        // Load main image with error handling
+        const img1Promise = getDownloadURL(img1Ref).catch(error => {
+          console.error("Error loading main image:", error);
+          return null;
+        });
+
+        // Load gallery images
+        const imagePromises = photoPaths.map((path) => {
+          const imageRef = ref(storage, path);
+          return getDownloadURL(imageRef).catch(error => {
+            console.error(`Error loading image ${path}:`, error);
+            return null; // Return null for failed images
+          });
+        });
+
+        // Wait for all assets to load
+        const [img1Url, ...imageUrls] = await Promise.all([img1Promise, ...imagePromises]);
+
+        // Only update state if component is still mounted
+        if (isMounted) {
+          if (img1Url) setImg1(img1Url);
+          
+          // Filter out null values from failed image loads
+          const validImageUrls = imageUrls.filter(url => url !== null);
+          setImages(validImageUrls);
+        }
+      } catch (error) {
+        console.error("Error in loadFirebaseAssets:", error);
+      }
+    };
+
+    loadFirebaseAssets();
+
+    // Cleanup function
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
 

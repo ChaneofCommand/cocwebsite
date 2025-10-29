@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import LoadFromTop from "../../../Hooks/LoadFromTop";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
@@ -35,99 +35,81 @@ import {
 } from "../Case_Study_Template";
 import { BopWrapper } from "../Case_Study_Images/BOP_PHOTOS";
 import { PhotoDiv } from "../../Case_Study_Template/Case_Study_Images/AMAZON_PHOTOS";
-import { useState } from "react";
+
 import styles from "../Case_Studies/CaseStudyTemplate.module.css";
 import { MdArrowForwardIos, MdArrowBackIos, MdClose } from "react-icons/md";
 
 
 import { storage } from "../../Firebase/firebase"; 
-const HipHop = () => {
-
-  const [photoUrls, setPhotoUrls] = useState([]);
-
- 
-  
+const BapeXKidSuper = () => {
+  console.log("BapeXKidSuper component rendering...");
   const [images, setImages] = useState([]);
 
   const photoPaths = [
-    "HipHop/1692812693709.jpg",
-    "HipHop/A49U0269.jpg",
-    "HipHop/A49U0272.jpg",
-    "HipHop/A49U0300.jpg",
-    "HipHop/A49U0308.jpg",
-    "HipHop/A49U0333.jpg",
-    "HipHop/A49U0359.jpg",
-    "HipHop/A49U0370.jpg",
-    "HipHop/A49U0384.jpg",
-    "HipHop/HHTI_LA-104.jpg",
-    "HipHop/HHTI_LA-106.jpg",
-    "HipHop/HHTI_LA-121.jpg",
-    "HipHop/HHTI_LA-141.jpg",
-    "HipHop/HHTI_LA-155.jpg",
-    "HipHop/HHTI_LA-156.jpg",
-    "HipHop/HHTI_LA-166.jpg",
-    "HipHop/HHTI_LA-175.jpg",
-    "HipHop/HHTI_LA-191.jpg",
-    "HipHop/HHTI_LA-195.jpg",
-    "HipHop/HHTI_LA-217.jpg",
-    "HipHop/HHTI_LA-22.jpg",
-    "HipHop/HHTI_LA-220.jpg",
-    "HipHop/HHTI_LA-265.jpg",
-    "HipHop/HHTI_LA-29.jpg",
-    "HipHop/HHTI_LA-290.jpg",
-    "HipHop/HHTI_LA-295.jpg",
-    "HipHop/HHTI_LA-314.jpg",
-    "HipHop/HHTI_LA-316.jpg",
-    "HipHop/HHTI_LA-32.jpg",
-    "HipHop/HHTI_LA-334.jpg",
-    "HipHop/HHTI_LA-336.jpg",
-    "HipHop/HHTI_LA-37.jpg",
-    "HipHop/HHTI_LA-452.jpg",
-    "HipHop/HHTI_LA-467.jpg",
-    "HipHop/HHTI_LA-471.jpg",
-    "HipHop/HHTI_LA-473.jpg",
-    "HipHop/HHTI_LA-49.jpg",
-    "HipHop/HHTI_LA-81.jpg",
-    "HipHop/HHTI_LA-83.jpg",
-    "HipHop/HHTI_LA-96.jpg",
+   "BapeXKidSuper/Bape1.jpg",
+   "BapeXKidSuper/Bape2.jpg",
+    "BapeXKidSuper/Bape3.jpg",
        // Add more photo paths as needed
       ];
-      const [img1, setImg1] = useState(null);
-      const [video1, setVideo1] = useState(null);
-      const [video2, setVideo2] = useState(null);
-      useEffect(() => {
-        let imagePromises = photoPaths.map((path) => {
+  const [img1, setImg1] = useState(null);
+  const [video1, setVideo1] = useState(null);
+  const [video2, setVideo2] = useState(null);
+  
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadFirebaseAssets = async () => {
+      console.log("Loading Firebase assets...");
+      try {
+        const img1Ref = ref(storage, "BapeXKidSuper/Bape1.jpg");
+        const video1Ref = ref(storage, "Videos/BapeXKidSuper/Bapevid1.mp4");
+        const video2Ref = ref(storage, "Videos/BapeXKidSuper/Bapevid2.mp4");
+
+        const assetPromises = [
+          getDownloadURL(img1Ref).catch(error => {
+            console.error("Error loading main image:", error);
+            return null;
+          }),
+          getDownloadURL(video1Ref).catch(error => {
+            console.error("Error loading video 1:", error);
+            return null;
+          }),
+          getDownloadURL(video2Ref).catch(error => {
+            console.error("Error loading video 2:", error);
+            return null;
+          })
+        ];
+
+        const imagePromises = photoPaths.map((path) => {
           const imageRef = ref(storage, path);
-          const img1Ref = ref(storage,   "HipHop/A49U0300.jpg",);
-          const video1Ref = ref(storage,   "Videos/INSTAREEL_HIPHOP_50.mp4",);
-          const video2Ref = ref(storage,   "Videos/HipHop2.mp4",);
-          getDownloadURL(img1Ref)
-          .then((url) => {
-            // The download URL is now available to use
-            setImg1(url);
-          })
-          getDownloadURL(video1Ref)
-          .then((url) => {
-            // The download URL is now available to use
-            setVideo1(url);
-          })
-          getDownloadURL(video2Ref)
-          .then((url) => {
-            // The download URL is now available to use
-            setVideo2(url);
-          })
-          return getDownloadURL(imageRef);
-         
-        });
-    
-        Promise.all(imagePromises)
-          .then((urls) => {
-            setImages(urls);
-          })
-          .catch((error) => {
-            console.log(error);
+          return getDownloadURL(imageRef).catch(error => {
+            console.error(`Error loading image ${path}:`, error);
+            return null;
           });
-      }, []);
+        });
+
+        const [img1Url, video1Url, video2Url] = await Promise.all(assetPromises);
+        const imageUrls = await Promise.all(imagePromises);
+
+        if (isMounted) {
+          if (img1Url) setImg1(img1Url);
+          if (video1Url) setVideo1(video1Url);
+          if (video2Url) setVideo2(video2Url);
+          
+          const validImageUrls = imageUrls.filter(url => url !== null);
+          setImages(validImageUrls);
+        }
+      } catch (error) {
+        console.error("Error in loadFirebaseAssets:", error);
+      }
+    };
+
+    loadFirebaseAssets();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [visible, setIsVisible] = useState(false);
@@ -171,20 +153,20 @@ const HipHop = () => {
             >
               <Column1></Column1>
               <Column2>
-                <Heading>hip hop 'til infinity</Heading>
+                <Heading>bape x kidsuper screen printing class</Heading>
                 <Underline />
 
                 <DataContainer>
                   <DataDiv>
                     <BoldH1>CLIENT:</BoldH1>
-                    <DataH1>Mass Appeal</DataH1>
+                    <DataH1>Kidsuper</DataH1>
                   </DataDiv>
 
                   <DataDiv>
                     <BoldH1>LOCATION:</BoldH1>
                     <DataH1>
-                      New York City, NY <br></br> Los Angeles, CA <br></br> +
-                      More Cities Soon
+                      158 Roebling ST <br></br> Brooklyn, NY
+                    
                     </DataH1>
                   </DataDiv>
 
@@ -195,45 +177,24 @@ const HipHop = () => {
 
                   <DataDiv>
                     <BoldH1>DURATION:</BoldH1>
-                    <DataH1>45 Days (NYC); 4 Months (LA)</DataH1>
+                    <DataH1>2pm-5pm</DataH1>
                   </DataDiv>
 
                   <DataDiv>
                     <BoldH1>AUDIENCE:</BoldH1>
-                    <DataH1>General Public: Hip-Hop Fans</DataH1>
+                    <DataH1>Invited influncers</DataH1>
                   </DataDiv>
 
                   <DataDiv>
                     <BoldH1>TALENT:</BoldH1>
                     <DataH1>
-                      Nas, Snoop Dogg, DJ Clark Kent, DJ Battlecat
+                      Master Kidsuper Screenprinter
                     </DataH1>
                   </DataDiv>
                 </DataContainer>
 
                 <Subtitle2>
-                  <span style={{ FontWeight: "bold" }}>M</span>edia brand Mass
-                  Appeal tapped CoC to develop “Hip-Hop 'Til Infinity,” an
-                  evocative digital installation celebrating 50 years of
-                  hip-hop. CoC was involved with procuring rare,
-                  never-before-seen artifacts for the exhibition and producing
-                  highly Instagrammable ‘surprise and delight’ props, taking
-                  guests on an immersive journey through hip-hop’s different
-                  eras and regions. After launching the exhibition at Hall Des
-                  Lumières during New York City’s #HipHop50 celebrations in
-                  August 2023, the exhibition went bigger and better in Los
-                  Angeles with a four-month activation that kicked off just
-                  before the start of Grammy season in January 2024. CoC helped
-                  curate artifacts for the museum, developed the design for and
-                  oversaw the buildout of the raw site, procuring vendors and
-                  overseeing buildout of new installations including a
-                  recreation of the infamous Death Row Records electric chair
-                  and Snoop Dogg's 'Doggy Den,' dedicated to the 30 year
-                  anniversary of Doggystyle. CoC also managed partnerships with
-                  Morrison Hotel Galleries and photographer Estevan Oriol to
-                  round out the exhibit. In addition to ticket sales and social
-                  media buzz, the pop-up produced massive retail sales via the
-                  carefully merchandised gift shop.
+                  <span style={{ FontWeight: "bold" }}>I</span>n collaboration with Bape, Kidsuper hosted a screenprinting class at their Brooklyn location in April 2024. During this class, invited influencers were able to select iconic Bape and Kidsuper prints which they got to learn how to apply themselves to Bape t-shirts or any Bape clothing items that they brought with them. Attendees were also able to get custom Bape t-shirts printed in-house by master screenprinter Kidsuper.
                 </Subtitle2>
                 <PressLinks>
                   <PLBox>
@@ -435,4 +396,4 @@ const HipHop = () => {
   );
 };
 
-export default HipHop;
+export default BapeXKidSuper;

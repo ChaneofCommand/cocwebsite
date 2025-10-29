@@ -39,6 +39,8 @@ import Accenture from "./components/Case_Study_Template/Case_Studies/Accenture";
 import AdidasCreator from "./components/Case_Study_Template/Case_Studies/AdidasCreator";
 import GoogleP from "./components/Case_Study_Template/Case_Studies/GoogleP";
 import WNBA from "./components/Case_Study_Template/Case_Studies/WNBA";
+import Camouflage from "./components/Case_Study_Template/Case_Studies/Camouflage";
+import BapeXKidSuper from "./components/Case_Study_Template/Case_Studies/BapeXKidSuper";
 /*
           <Route path= {`${process.env.PUBLIC_URL}/`} element ={<Gallery />} />
           <Route path={`${process.env.PUBLIC_URL}/about`} element= { <About />} />
@@ -91,6 +93,8 @@ function App() {
           <Route path="/ubereats" element={<UberEats />} />
           <Route path="/accenture" element={<Accenture />} />
           <Route path="/wnba" element={<WNBA />} />
+          <Route path="/camouflage" element={<Camouflage />} />
+          <Route path="/bape-kidsuper" element={<BapeXKidSuper />} />
         </Routes>
         <Footer />
       </HashRouter>
