@@ -20,11 +20,8 @@ import {
   BoldH1,
   ColumnA2B,
 } from "../Case_Study_Template";
-import { AmazonProps } from "../Props/Case_Studies-Props1";
-import Image from "../../ZoomImage/Image";
 import { BopWrapper } from "../Case_Study_Images/BOP_PHOTOS";
 import { PhotoDiv } from "../../Case_Study_Template/Case_Study_Images/AMAZON_PHOTOS";
-import Lululemon from "./Lululemon";
 const UberEats = ({ isOpen, toggle }) => {
   return (
     <>

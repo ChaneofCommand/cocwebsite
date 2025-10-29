@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { HashRouter, BrowserRouter, Route, Routes } from "react-router-dom";
+import { HelmetProvider } from 'react-helmet-async';
 
 import Gallery from "./components/Gallery";
 import About from "./components/About";
@@ -37,6 +38,7 @@ import Ouai from "./components/Case_Study_Template/Case_Studies/Ouai";
 import Accenture from "./components/Case_Study_Template/Case_Studies/Accenture";
 import AdidasCreator from "./components/Case_Study_Template/Case_Studies/AdidasCreator";
 import GoogleP from "./components/Case_Study_Template/Case_Studies/GoogleP";
+import WNBA from "./components/Case_Study_Template/Case_Studies/WNBA";
 /*
           <Route path= {`${process.env.PUBLIC_URL}/`} element ={<Gallery />} />
           <Route path={`${process.env.PUBLIC_URL}/about`} element= { <About />} />
@@ -53,7 +55,7 @@ import GoogleP from "./components/Case_Study_Template/Case_Studies/GoogleP";
 /*basename={process.env.PUBLIC_URL} */
 function App() {
   return (
-    <>
+    <HelmetProvider>
       <HashRouter>
         <HeaderFooter />
         <Routes>
@@ -88,10 +90,11 @@ function App() {
           <Route path="/rodarte" element={<Rodarte />} />
           <Route path="/ubereats" element={<UberEats />} />
           <Route path="/accenture" element={<Accenture />} />
+          <Route path="/wnba" element={<WNBA />} />
         </Routes>
         <Footer />
       </HashRouter>
-    </>
+    </HelmetProvider>
   );
 }
 ReactDOMServer.renderToString(<App />);

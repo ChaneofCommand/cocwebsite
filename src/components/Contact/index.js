@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import Decal from "../../Images/Decal2.png";
 import LoadFromTop from "../../Hooks/LoadFromTop"
 import decalImg from "../../Images/Decal2.png"
+import SEO from "../SEO"
 
 import {
   AboutContainer,
@@ -44,6 +45,12 @@ function Contact () {
   const [message, setMessage] = useState();
   return (
     <>
+      <SEO 
+        title="Contact - Chane of Command | Get In Touch"
+        description="Contact Chane of Command for your experiential marketing needs. Reach out to discuss event production, creative consultation, and marketing services."
+        keywords="contact Chane of Command, experiential marketing inquiry, event production quote, marketing consultation"
+        url="https://chaneofcommand.com/contact"
+      />
       <AboutContainer>
         <AboutWrapper>
           <AboutRow>

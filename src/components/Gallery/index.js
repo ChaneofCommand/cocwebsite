@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import {useLocation} from "react-router-dom";
+import Layout from "../Layout";
+import SEO from "../SEO";
+import StructuredData from "../StructuredData";
 
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import styles from "../Gallery/Slider.module.css"
@@ -358,7 +361,15 @@ useEffect(() => {
   ? images.filter((image, index) => photoPaths[index].keywords.includes(selectedKeyword))
   : images;
   return (
-    <GalleryBox className={styles.gallerybox}>
+    <>
+      <SEO 
+        title="Chane of Command - Portfolio | Experiential Marketing Projects"
+        description="Explore our portfolio of experiential marketing campaigns and event productions. See our work with major brands in immersive brand experiences."
+        keywords="experiential marketing portfolio, event production examples, brand activation campaigns, marketing case studies"
+        url="https://chaneofcommand.com/"
+      />
+      <StructuredData />
+      <GalleryBox className={styles.gallerybox}>
       <GalleryContainer>
         <Column1 />
         <Column2>
@@ -378,6 +389,7 @@ useEffect(() => {
       </GalleryContainer>
       <LoadFromTop />
     </GalleryBox>
+    </>
   );
 };
 
